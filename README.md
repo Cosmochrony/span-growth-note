@@ -29,9 +29,9 @@ $\beta = 1/(\delta + \tfrac{1}{2})$:
 
 The additive $\tfrac{1}{2}$ of the cascade-exponent law is thereby identified as expander-specific; the
 Heisenberg capacity-to-growth map on the growth branch is $\beta_{\mathrm{Heis}} = D - \delta_c$.
-The window-effective exponents of the production data ($q \le 211$) sit near the marginal boundary
-$\delta_c \approx D$ — recorded as an observation about window-effective exponents, with the asymptotic
-branch left open.
+The window-effective exponents of the production data make contact near $q = 211$ and separate strictly for
+$q \ge 307$: the contact is a transitional crossing of window-effective exponents, with the asymptotic value
+of $\delta_c$, and hence the asymptotic branch, left open.
 The polynomial span exponent is explicitly distinguished from the exponential per-shell rate carried by
 $\beta^*$ in the projected-Yukawa mass factorisation.
 

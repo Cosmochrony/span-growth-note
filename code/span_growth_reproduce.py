@@ -11,7 +11,10 @@ Outputs: all numbers quoted in the note (printed), and
 
 Conventions: log-log fits against log n (the note's convention); the campaign's log(n+1)
 variant is reported for the robustness check. Only exponents are used, never amplitudes.
-Bootstrap: 2000 resamples over conjugate pair-blocks, seed 20260721 (the frozen-audit seed).
+Bootstrap: 2000 resamples over conjugate pair-blocks. Seed 20260721 (the frozen-audit seed,
+consumed in the order 307, 401, 601) reproduces the published q >= 307 standard errors
+exactly; the independent stream seeded 20260722 provides the figure-only error bars of the
+remaining primes. The figure is written with a fixed CreationDate for byte-stable output.
 """
 
 import json
@@ -159,7 +162,7 @@ def main():
     ax2.set_title("(b) transitional crossing, then separation")
     fig.tight_layout()
     out = os.path.join(FIGS, "effective_exponent_crossing.pdf")
-    fig.savefig(out)
+    fig.savefig(out, metadata={"CreationDate": None})
     print(f"\nfigure written: {os.path.relpath(out)}")
 
 
