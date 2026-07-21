@@ -1,0 +1,421 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{doi}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  pdftitle={Capacity Decay Determines Span-Growth Universality on Heisenberg Graphs},
+  pdfauthor={J\'{e}r\^{o}me Beau},
+  pdfsubject={Three-branch classification of relational span growth on polynomial-growth Cayley graphs},
+  pdfkeywords={Heisenberg group, Cayley graph, projective capacity, span growth, Bass--Guivarc'h dimension,
+    growth equation, spectral admissibility, cascade exponent}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Heis}{\mathrm{Heis}_3(\mathbb{Z})}
+\newcommand{\Heisq}{\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})}
+\newcommand{\cBI}{c_{\mathrm{BI}}}
+\newcommand{\dc}{\delta_c}
+\newcommand{\Dhom}{D_{\mathrm{hom}}}
+\newcommand{\bstar}{\beta^{*}}
+
+\title{Capacity Decay Determines Span-Growth Universality on Heisenberg Graphs\\
+  \large A Three-Branch Classification, and the Substrate Dependence of the Cascade-Exponent Law}
+\author{J\'er\^ome Beau\\
+  \small Independent Researcher, France; jerome.beau@cosmochrony.org}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The spectral admissibility programme measures a projective block capacity $\sigma_c(n)$ along the
+breadth-first cascade of the Heisenberg Cayley graph, decaying as a power law $\sigma_c(n) \sim a\,n^{-\dc}$,
+and converts capacity exponents into cascade growth exponents through the structural relation
+$\beta = 1/(\delta + \tfrac{1}{2})$, derived on Ramanujan--Lubotzky--Phillips--Sarnak (LPS) relaxation graphs.
+The present note derives the span-growth law that the Heisenberg substrate itself imposes.
+The cumulative fingerprint span $r(n)$ obeys the exact increment identity
+$\Delta r(n) = \sigma_c(n)\,|S_n|$, and the exact breadth-first spheres of $\Heis$ grow polynomially with
+homogeneous dimension $D = 4$.
+Asymptotic summation then yields a complete three-branch classification, depending only on $(\dc, D)$:
+polynomial span growth $r(n) \sim n^{D-\dc}$ for $\dc < D$; logarithmic growth for $\dc = D$; saturation
+$r_\infty - r(n) \sim n^{-(\dc - D)}$ for $\dc > D$.
+Two structural consequences follow.
+First, the span is never proportional to the number of configurations reached: $r(n)/|B_n| \to 0$ for every
+$\dc > 0$, so the valence--exploration proportionality that closes the LPS growth equation does not transpose
+to this substrate.
+Second, no uniform constant $c$ can sustain the LPS-form bound $\Delta r \le c\,\sigma_c \sqrt{r}$: since
+$r(n) \le |B_n|$, any such constant must exceed $|S_n|/\sqrt{|B_n|} \asymp n^{D/2-1}$, which diverges for
+every polynomial growth dimension $D > 2$.
+The square-root frontier factor --- and with it the additive $\tfrac{1}{2}$ of the cascade-exponent law ---
+is therefore specific to expander-type substrates; on Heisenberg graphs the capacity-to-growth map on the
+growth branch is $\beta = D - \dc$.
+Pipeline data at $q \le 211$ illustrate the classification; the window-effective exponents sit close to the
+marginal boundary $\dc \approx D$, an observation recorded without asymptotic claim.
+The polynomial span exponent studied here is distinct from the exponential per-shell rate carried by the
+symbol $\bstar$ in the projected-Yukawa mass factorisation; the two objects are separated explicitly.
+
+\medskip
+\noindent\textbf{Interpretive status.}
+The classification theorem and the two no-go corollaries are proved under explicit power-law hypotheses; the
+numerical exponents are finite-window measurements; the near-marginality $\dc \approx D$ is an observation
+whose asymptotic fate is open.
+As a structural reading, span growth on an emergent relational substrate is governed by a competition between
+geometric opening (volume growth) and capacity decay (novelty exhaustion); at the measured windows the two
+sit near balance.
+This reading is an interpretation, not a result.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} Heisenberg group, Cayley graph, projective capacity, span growth,
+Bass--Guivarc'h dimension, growth equation, spectral admissibility, cascade exponent.
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{Position in the programme}
+\label{ssec:position}
+
+The spectral admissibility sub-programme of Cosmochrony constrains a cascade growth exponent $\beta$ through
+the structural relation
+\begin{equation}
+  \label{eq:lps-law}
+  \beta \;=\; \frac{1}{\delta + \tfrac{1}{2}},
+\end{equation}
+derived in O6~\cite{Beau2026a10} --- there in the form $\beta = 1/(\alpha + \tfrac{1}{2})$ with $\alpha$ the
+redundancy exponent in the valence, $R \sim p^{-\alpha}$ --- from a growth inequality on Ramanujan--LPS
+relaxation graphs~\cite{LPS88} established in O4~\cite{Beau2026a8}, recast in capacity language in
+O7~\cite{Beau2026a11}, and applied at the fibre level, in the $\delta$-form above, to the measured
+pair-capacity exponent $\delta_{\mathrm{pair}}$ of the Heisenberg cascade in
+O16--O24~\cite{Beau2026a20,Beau2026a25,Beau2026a26,Beau2026a27,Beau2026a28}.
+The capacity measurements themselves~\cite{Beau2026a16,Beau2026a29} are performed on the Cayley graphs of
+$\Heisq$, whose breadth-first (BFS) geometry is polynomial --- homogeneous dimension
+$\Dhom = 4$~\cite{Bass1972,Guivarch1973} --- and therefore very different from the expander geometry on which
+relation~\eqref{eq:lps-law} was derived.
+
+This note asks the substrate's own question: \emph{what growth law does the Heisenberg cascade itself
+impose}, using only objects native to a single Heisenberg BFS, with no LPS import?
+
+\subsection{Result}
+\label{ssec:result}
+
+The answer is a complete and elementary classification.
+The cumulative fingerprint span $r(n)$ --- the number of independent relational directions resolved up to
+BFS depth $n$ --- satisfies the exact increment identity $\Delta r(n) = \sigma_c(n)\,|S_n|$, where
+$\sigma_c$ is the per-shell block capacity and $|S_n|$ the BFS sphere.
+With the exact polynomial sphere growth of $\Heis$ and a power-law capacity decay
+$\sigma_c(n) \sim a\,n^{-\dc}$, asymptotic summation gives
+(Theorem~\ref{thm:classification}):
+\begin{equation}
+  \label{eq:branches}
+  \begin{array}{ll}
+    \dc < D: & r(n) \sim \dfrac{a\kappa}{D-\dc}\, n^{\,D-\dc},\\[3mm]
+    \dc = D: & r(n) \sim a\kappa\, \log n,\\[2mm]
+    \dc > D: & r_\infty - r(n) \sim \dfrac{a\kappa}{\dc-D}\, n^{-(\dc-D)}.
+  \end{array}
+\end{equation}
+Saturation begins strictly at $\dc > D$; the capacity-to-growth map on the growth branch is
+\begin{equation}
+  \label{eq:heis-law}
+  \beta_{\mathrm{Heis}} \;=\; D - \dc \qquad (\dc < D),
+\end{equation}
+and is not of the form~\eqref{eq:lps-law}.
+Two corollaries make the substrate dependence of~\eqref{eq:lps-law} precise.
+Corollary~\ref{cor:t1} (no valence--exploration proportionality): $r(n)/|B_n| \to 0$ for every $\dc > 0$.
+Corollary~\ref{cor:t3} (no square-root frontier): no uniform constant sustains
+$\Delta r \le c\,\sigma_c\sqrt{r}$ on any polynomial-growth substrate with $D > 2$.
+Both are analytic; neither depends on numerical fits.
+
+\subsection{What this note does not claim}
+\label{ssec:scope}
+
+The note does not modify any capacity measurement, does not touch the shell-alignment theorem of
+O22~\cite{Beau2026a26}, the threshold derivation of O23~\cite{Beau2026a27}, or the verticality result of
+O24~\cite{Beau2026a28}, and makes no statement about the numerical value of any asymptotic exponent.
+It establishes in which geometric regime the conversion law~\eqref{eq:lps-law} can be derived, and what
+replaces it on the substrate where the capacities are actually measured.
+Throughout, statements are asymptotic on the infinite group $\Heis$, equivalently in the double limit
+$q \to \infty$ with $n$ in the wraparound-free pre-saturation regime; at fixed $q$ the span is bounded and
+necessarily saturates.
+
+\section{Setting and native definitions}
+\label{sec:setting}
+
+\subsection{Substrate}
+\label{ssec:substrate}
+
+Let $\Heis$ be the discrete Heisenberg group with generating set $S = \{X^{\pm 1}, Y^{\pm 1}\}$, and let
+$S_n$ and $B_n$ denote the BFS sphere and ball of radius $n$ in $\mathrm{Cay}(\Heis, S)$.
+The volume growth is polynomial of homogeneous dimension
+$\Dhom = 4$~\cite{Bass1972,Guivarch1973}: $|B_n| \asymp n^4$, $|S_n| \asymp n^3$.
+Exact BFS enumeration (reproduced here; first computed for the critical-coverage
+analysis~\cite{Beau2026ccnote}) gives $s_{22} = 16{,}934$ and $|B_{22}| = 99{,}689$, with fitted exponents
+$3.10$ and $3.99$ over $n \in [10, 22]$.
+The isoperimetric ratio $|S_n|/|B_n| \approx 3.5/n$ vanishes: this substrate has no expander Cheeger
+constant, in contrast with the Ramanujan--LPS family~\cite{LPS88}.
+
+\subsection{Capacity, span, and the exact increment identity}
+\label{ssec:definitions}
+
+For a Weil block $c$ of $\Heisq$, the pipeline of O12~\cite{Beau2026a16} measures the per-shell block
+capacity
+\begin{equation}
+  \label{eq:sigma-def}
+  \sigma_c(n) \;=\; \frac{\Delta r(n)}{|S_n|},
+\end{equation}
+where $\Delta r(n)$ is the incremental Gram--Schmidt span contributed by the fingerprints of shell $S_n$.
+We take~\eqref{eq:sigma-def} as the definition of the novelty fraction and define the cumulative span
+$r(n) = \sum_{k \le n} \Delta r(k)$.
+Three native facts frame everything that follows.
+
+\begin{lemma}[Exact increment identity and unit bound]
+  \label{lem:identity}
+  $\Delta r(n) = \sigma_c(n)\,|S_n|$ holds identically, $\sigma_c(n) \le 1$, and consequently
+  $r(n) \le |B_n|$.
+\end{lemma}
+
+\begin{proof}
+  The identity is definition~\eqref{eq:sigma-def} read multiplicatively.
+  The $|S_n|$ fingerprint vectors of shell $n$ span at most an $|S_n|$-dimensional increment, so
+  $\Delta r(n) \le |S_n|$ and $\sigma_c(n) \le 1$; summing gives $r(n) \le \sum_{k\le n}|S_k| = |B_n|$.
+\end{proof}
+
+\begin{remark}[The only growing valence]
+  \label{rem:valence}
+  On the LPS side the dynamical variable of the growth equation is the graph valence
+  $p(n)$~\cite{Beau2026a8,Beau2026a10}.
+  A Heisenberg Cayley graph has constant degree, so the degree cannot play this role; the cumulative span
+  $r(n)$ is the only corpus-native growing candidate, and the notation $p(n) := r(n)$ is used below when the
+  contrast with the LPS equation is intended.
+\end{remark}
+
+\section{The classification theorem}
+\label{sec:theorem}
+
+\begin{theorem}[Three-branch span-growth classification]
+  \label{thm:classification}
+  Suppose $|S_n| = \kappa\, n^{D-1}(1 + o(1))$ with $D > 1$, and
+  $\sigma_c(n) = a\, n^{-\dc}(1 + o(1))$ with $a, \dc > 0$.
+  Then the cumulative span $r(n) = \sum_{k \le n} \sigma_c(k)\,|S_k|$ obeys
+  \[
+    \begin{array}{ll}
+      \dc < D: & r(n) = \dfrac{a\kappa}{D-\dc}\, n^{\,D-\dc}\,(1 + o(1)),\\[3mm]
+      \dc = D: & r(n) = a\kappa\, (\log n)\,(1 + o(1)),\\[2mm]
+      \dc > D: & r_\infty := \lim_n r(n) < \infty
+        \quad\text{and}\quad
+        r_\infty - r(n) = \dfrac{a\kappa}{\dc-D}\, n^{-(\dc-D)}\,(1 + o(1)).
+    \end{array}
+  \]
+\end{theorem}
+
+\begin{proof}
+  The summand is $\sigma_c(k)|S_k| = a\kappa\, k^{(D-1)-\dc}(1+o(1))$.
+  For $\dc < D$ the exponent exceeds $-1$, and comparison of the partial sum with
+  $\int^n t^{(D-1)-\dc}\,\mathrm{d}t = n^{D-\dc}/(D-\dc)$ gives the first branch; the $o(1)$ factors
+  transfer because the tail dominates the sum.
+  For $\dc = D$ the summand is $a\kappa\, k^{-1}(1+o(1))$ and the partial sums are
+  $a\kappa \log n\,(1+o(1))$.
+  For $\dc > D$ the series converges; the tail beyond $n$ is
+  $\sum_{k > n} a\kappa\, k^{(D-1)-\dc}(1+o(1)) = \frac{a\kappa}{\dc-D}\, n^{-(\dc-D)}(1+o(1))$ by the same
+  integral comparison.
+\end{proof}
+
+\begin{remark}[Universality and strictness]
+  \label{rem:universality}
+  The classification depends only on the pair $(\dc, D)$: all microscopic detail enters through the two
+  exponents, and the amplitudes $a, \kappa$ affect only prefactors.
+  Saturation begins strictly at $\dc > D$; the boundary case $\dc = D$ grows without bound, logarithmically.
+  For $\Heis$, $D = \Dhom = 4$ exactly~\cite{Bass1972,Guivarch1973}.
+\end{remark}
+
+\begin{corollary}[No valence--exploration proportionality]
+  \label{cor:t1}
+  Under the hypotheses of Theorem~\ref{thm:classification}, $r(n)/|B_n| \to 0$ for every $\dc > 0$.
+  In particular the closure hypothesis of the LPS growth equation --- effective valence proportional to the
+  number of configurations reached~\cite{Beau2026a8} --- fails on the Heisenberg substrate for the span
+  reading of the valence, in every branch of the classification.
+\end{corollary}
+
+\begin{proof}
+  $|B_n| \asymp n^D$ while $r(n)$ is $O(n^{D-\dc})$, $O(\log n)$, or bounded.
+\end{proof}
+
+\begin{corollary}[No uniform square-root frontier bound]
+  \label{cor:t3}
+  Under the sphere-growth hypothesis of Theorem~\ref{thm:classification}, with $\sigma_c(n) > 0$ along the
+  cascade, let $D > 2$.
+  There is no constant $c$ such that
+  $\Delta r(n) \le c\,\sigma_c(n)\sqrt{r(n)}$ holds along the cascade.
+  Indeed, by Lemma~\ref{lem:identity} any such constant must satisfy
+  \[
+    c \;\ge\; \frac{|S_n|}{\sqrt{r(n)}} \;\ge\; \frac{|S_n|}{\sqrt{|B_n|}}
+    \;\asymp\; n^{\,D/2 - 1} \;\longrightarrow\; \infty .
+  \]
+  For $\Heis$ ($D = 4$) the divergence is linear in $n$ (exact-sphere fit: $n^{1.11}$ over $n \in [10,22]$).
+\end{corollary}
+
+\begin{remark}[Why the LPS law does not transpose]
+  \label{rem:lps}
+  In the LPS derivation~\cite{Beau2026a8,Beau2026a10} the frontier factor $\sqrt{p}$ carries the expander
+  isoperimetry of a graph whose valence grows along the cascade, and the additive $\tfrac{1}{2}$
+  in~\eqref{eq:lps-law} is precisely the $p$-exponent of that frontier.
+  On a polynomial-growth substrate the frontier is the exogenous sphere $|S_n| \sim \kappa n^{D-1}$,
+  independent of the achieved span, and carries $p$-exponent zero; Corollary~\ref{cor:t3} shows that no
+  uniform constant can restore the square-root form once $D > 2$.
+  The Heisenberg capacity-to-growth map is therefore~\eqref{eq:heis-law} on the growth branch, not
+  \eqref{eq:lps-law}; neither law implies the other, and each is correct in its own geometric regime.
+  Restoring~\eqref{eq:lps-law} for Heisenberg-measured exponents requires a two-substrate construction ---
+  LPS dynamics fed by Heisenberg-measured redundancy --- whose identification step is external to both
+  substrates and is not supplied here.
+\end{remark}
+
+\begin{remark}[Two distinct exponents named beta]
+  \label{rem:beta-category}
+  The exponent $\beta_{\mathrm{Heis}} = D - \dc$ of~\eqref{eq:heis-law} is a polynomial growth exponent,
+  $r \sim n^{\beta}$.
+  The symbol $\bstar$ of the projected-Yukawa mass factorisation acts as an exponential per-shell rate,
+  $A(n) = e^{\bstar n}$~\cite{Beau2026pyo}.
+  These are different mathematical objects; no statement in this note converts one into the other.
+\end{remark}
+
+\begin{remark}[Pair observable versus span increment]
+  \label{rem:pair}
+  The joint span of a conjugate pair $\{c, q-c\}$ is $r_c + r_{q-c} = 2r_c$, whose increment decays with the
+  block exponent $\dc$.
+  The pair observable $\sigma_{\mathrm{pair}} = \sigma_c\,\sigma_{q-c}$~\cite{Beau2026a20} is a product with
+  exponent $2\dc$ and is not a span increment; feeding $\delta_{\mathrm{pair}} = 2\dc$ into any growth law of
+  the present kind would require a product-to-span conversion that does not exist.
+  Theorem~\ref{thm:classification} therefore concerns $\dc$, the block-level exponent.
+\end{remark}
+
+\section{Numerical illustration}
+\label{sec:numerics}
+
+The classification is illustrated on the programme's production data~\cite{Beau2026a29}, at the five primes
+$q \in \{29, 61, 101, 151, 211\}$, using each dataset's stored pre-saturation window $[n_0, n_1]$, the
+per-shell $\sigma_c$ averaged over the sampled conjugate pair-blocks, and only exponents (never amplitudes).
+For $q = 211$ the direct block-level dataset (70 pairs, $M = 20$ vectors per block, window $[3,13]$) is
+used.
+
+\begin{table}[ht]
+  \centering
+  \caption{Window-effective exponents on the production data.
+    $\dc^{\mathrm{eff}}$: block capacity decay; $D_{\mathrm{eff}}$: ball-growth exponent of the same window;
+    $\beta_r^{\mathrm{eff}}$: finite-window log-log slope of the cumulative span
+    (on the saturation side this slope is a transitional quantity, not $D - \dc$).}
+  \label{tab:windows}
+  \begin{tabular}{cccccc}
+    \toprule
+    $q$ & window & $\dc^{\mathrm{eff}}$ & $D_{\mathrm{eff}}$ & $\beta_r^{\mathrm{eff}}$ & branch (window) \\
+    \midrule
+    29  & $[2,4]$  & 5.97 & 2.98 & 0.03 & saturation side \\
+    61  & $[2,8]$  & 5.31 & 3.39 & 0.19 & saturation side \\
+    101 & $[3,11]$ & 5.04 & 3.71 & 0.31 & saturation side \\
+    151 & $[3,13]$ & 4.23 & 3.75 & 0.45 & saturation side \\
+    211 & $[3,13]$ & 3.748 & 3.753 & 0.558 & marginal within resolution \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Three features of Table~\ref{tab:windows} are worth recording.
+First, the span-to-ball ratio decays as $r/|B_n| \sim n^{-3.0}$ to $n^{-3.4}$ across all $q$, illustrating
+Corollary~\ref{cor:t1} by three decades of scaling.
+Second, the constant that Corollary~\ref{cor:t3} rules out would have to vary by a factor $53$ ($q = 61$) to
+$67$ ($q = 151$) within a single fitting window --- an illustration only, since the corollary is analytic.
+Third, the window-effective exponents drift in opposite directions as $q$ grows
+($\dc^{\mathrm{eff}}$ descending $5.97 \to 3.748$, $D_{\mathrm{eff}}$ ascending $2.98 \to 3.753$) and cross
+near $q = 211$, where $\dc^{\mathrm{eff}} = 3.74810$ and $D_{\mathrm{eff}} = 3.75262$.
+
+\begin{remark}[Near-marginality: an observation, not a claim]
+  \label{rem:marginal}
+  The $q = 211$ coincidence concerns window-effective exponents, not the asymptotic pair
+  $(\dc, \Dhom = 4)$; because the two drift in opposite directions with the window, a transitional crossing
+  is a live explanation.
+  Under the programme's asymptotic estimate $\dc \approx 3.72$~\cite{Beau2026a20,Beau2026a29} the growth
+  branch applies with $\beta_{\mathrm{Heis}} \approx 0.28$; the asymptotic value of $\dc$, and hence the
+  asymptotic branch, remains open.
+  The value $\dc \approx 3.72$ sits between $D - 1 = 3$ (constant novelty per shell) and $D = 4$
+  (logarithmic span growth).
+\end{remark}
+
+\section{Consequences for the admissibility programme}
+\label{sec:consequences}
+
+The results delimit, without modifying, the standing transfer chain.
+The measured capacity exponents~\cite{Beau2026a16,Beau2026a20,Beau2026a29}, the shell-alignment
+theorem~\cite{Beau2026a26}, the threshold derivation~\cite{Beau2026a27}, and the verticality
+result~\cite{Beau2026a28} are untouched.
+What changes is the status of the conversion law: relation~\eqref{eq:lps-law} is derived in an
+expander regime with growing valence and, by Corollaries~\ref{cor:t1} and~\ref{cor:t3}, cannot be re-derived
+on the polynomial substrate where the exponents are measured; the substrate's own conversion
+is~\eqref{eq:branches}--\eqref{eq:heis-law}.
+Any continued use of~\eqref{eq:lps-law} with Heisenberg-measured exponents therefore relies on a
+two-substrate identification --- LPS-type dynamics whose redundancy input is the Heisenberg capacity ---
+which must be stated as a hypothesis and defended on its own terms.
+This sharpens, in the direction of a concrete derivation target, the conditional status recorded in
+the O-series~\cite{Beau2026a25,Beau2026a28}.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+On a single Heisenberg BFS, capacity decay determines span growth completely: the exact increment identity
+$\Delta r = \sigma_c |S_n|$, together with the exact polynomial sphere growth of homogeneous dimension
+$D = 4$, forces the three-branch classification~\eqref{eq:branches}, with polynomial growth for $\dc < D$,
+logarithmic growth at $\dc = D$, and strict saturation for $\dc > D$.
+The classification is universal in the pair $(\dc, D)$, refutes valence--exploration proportionality
+analytically ($r/|B_n| \to 0$ for every $\dc > 0$), and excludes any uniform square-root frontier bound for
+$D > 2$.
+The additive $\tfrac{1}{2}$ of the cascade-exponent law is thereby identified as expander-specific; the
+Heisenberg capacity-to-growth map on the growth branch is $\beta_{\mathrm{Heis}} = D - \dc$.
+The window-effective exponents of the production data sit near the marginal boundary $\dc \approx D$; whether
+this is a transitional crossing or a structural balance is an open question, recorded here as an observation.
+
+\subsection*{Interpretive outlook}
+
+\textbf{Interpretation, not derived result.}
+Read structurally, the theorem says that the growth of resolved relational structure on an emergent substrate
+is a competition between two exponents only: the geometric opening of the substrate (volume growth $D$) and
+the exhaustion of projective novelty (capacity decay $\dc$).
+On the programme's substrate, at the measured windows, the two sit near balance, at the edge where resolved structure grows
+only logarithmically --- a regime in which effective degrees of freedom would remain scarce no matter how
+large the explored configuration space becomes.
+Whether this near-balance is a finite-size coincidence or a structural principle --- capacity decay tied to
+volume growth --- is precisely the open question the classification isolates; if structural, it would give
+the programme a geometric reason for the scarcity of emergent degrees of freedom, but no such claim is made
+here.
+
+\bibliographystyle{plain}
+\bibliography{cosmochrony-bibliography,external-refs}
+
+\end{document}

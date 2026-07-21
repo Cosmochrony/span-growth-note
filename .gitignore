@@ -1,0 +1,4 @@
+out/
+pdfs/
+*.synctex.gz
+.DS_Store
