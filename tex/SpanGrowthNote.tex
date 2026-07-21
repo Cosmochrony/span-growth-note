@@ -7,6 +7,8 @@
 
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathtools}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage{hyperref}
 \usepackage{doi}
 \usepackage{geometry}
@@ -370,7 +372,19 @@ Third, the window-effective exponents drift in opposite directions as $q$ grows
 ($\dc^{\mathrm{eff}}$ descending, $D_{\mathrm{eff}}$ ascending), make contact near $q = 211$
 ($\dc^{\mathrm{eff}} = 3.74810$ vs $D_{\mathrm{eff}} = 3.75262$), and separate strictly beyond:
 $\dc^{\mathrm{eff}} - D_{\mathrm{eff}} = -0.207$, $-0.268$, $-0.492$ at $q = 307$, $401$, $601$, i.e.\
-$11.9$, $6.7$, $14.5$ standard errors of the inter-pair bootstrap.
+$11.9$, $6.7$, $14.5$ standard errors of the inter-pair bootstrap (Figure~\ref{fig:crossing}).
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{effective_exponent_crossing}
+  \caption{Window-effective exponents across the eight primes, on the published windows.
+    (a)~$\dc^{\mathrm{eff}}$ (error bars: standard error of a $2000$-resample bootstrap over conjugate
+    pair-blocks) and $D_{\mathrm{eff}}$;
+    (b)~the gap $\dc^{\mathrm{eff}} - D_{\mathrm{eff}}$: contact within resolution at $q = 211$, then
+    strict separation on the growth side for $q \ge 307$.
+    Produced by \texttt{code/span\_growth\_reproduce.py}.}
+  \label{fig:crossing}
+\end{figure}
 
 \begin{remark}[The $q = 211$ contact is a transitional crossing]
   \label{rem:marginal}
@@ -388,6 +402,23 @@ $11.9$, $6.7$, $14.5$ standard errors of the inter-pair bootstrap.
   branch applies with $\beta_{\mathrm{Heis}} \approx 0.28$; the asymptotic value of $\dc$, and hence the
   asymptotic branch, remains open.
 \end{remark}
+
+\subsection{Reproducibility and data provenance}
+\label{ssec:repro}
+
+Every numerical value quoted in this note, and Figure~\ref{fig:crossing}, are reproduced from the
+repository alone by running, from the repository root,
+\begin{center}
+  \texttt{python code/span\_growth\_reproduce.py}
+\end{center}
+The \texttt{data/} directory embeds compact copies of the block-level observables actually used (per prime:
+shell indices, shell sizes, and the per-pair $\sigma_c$ series; about $47$\,kB in total); the frozen fitting
+windows and the provenance of each source checkpoint are recorded in \texttt{data/provenance.json}.
+The exact spheres of $\Heis$ are recomputed by the script itself.
+Bootstrap standard errors use $2000$ resamples over conjugate pair-blocks; the $q \ge 307$ values quoted in
+Table~\ref{tab:windows} are reproduced exactly under the documented seed, and the remaining error bars of
+Figure~\ref{fig:crossing} come from an independent documented stream.
+The figure is produced by the script, in PDF only.
 
 \section{Consequences for the admissibility programme}
 \label{sec:consequences}

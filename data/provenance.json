@@ -1,0 +1,154 @@
+{
+  "29": {
+    "source": "spectral/o25/o25_outputs/q29_o25.npz",
+    "source_sha256_16": "cd0fde6d50b24993",
+    "pairs_K": 14,
+    "M_per_block": 50,
+    "window": [
+      2,
+      4
+    ],
+    "stored_window": [
+      2,
+      4
+    ],
+    "fields": [
+      "ns",
+      "shell_sizes",
+      "sigma_c_mean"
+    ],
+    "note": "full sigma_c_mean"
+  },
+  "61": {
+    "source": "spectral/o25/o25_outputs/q61_o25.npz",
+    "source_sha256_16": "27ef74d1805e0bb4",
+    "pairs_K": 30,
+    "M_per_block": 50,
+    "window": [
+      2,
+      8
+    ],
+    "stored_window": [
+      2,
+      8
+    ],
+    "fields": [
+      "ns",
+      "shell_sizes",
+      "sigma_c_mean"
+    ],
+    "note": "full sigma_c_mean"
+  },
+  "101": {
+    "source": "spectral/o25/o25_outputs/q101_o25.npz",
+    "source_sha256_16": "5597f4a14044a41c",
+    "pairs_K": 50,
+    "M_per_block": 50,
+    "window": [
+      3,
+      11
+    ],
+    "stored_window": [
+      3,
+      11
+    ],
+    "fields": [
+      "ns",
+      "shell_sizes",
+      "sigma_c_mean"
+    ],
+    "note": "full sigma_c_mean"
+  },
+  "151": {
+    "source": "spectral/o25/o25_outputs/q151_o25.npz",
+    "source_sha256_16": "4cd2180d6ab2fb6e",
+    "pairs_K": 75,
+    "M_per_block": 50,
+    "window": [
+      3,
+      13
+    ],
+    "stored_window": [
+      3,
+      13
+    ],
+    "fields": [
+      "ns",
+      "shell_sizes",
+      "sigma_c_mean"
+    ],
+    "note": "full sigma_c_mean"
+  },
+  "211": {
+    "source": "gravity/q5a-o5/o25_outputs/q211_o25_partial.npz",
+    "source_sha256_16": "43a1b74e84453dcc",
+    "pairs_K": 70,
+    "M_per_block": 20,
+    "window": [
+      3,
+      13
+    ],
+    "stored_window": [
+      3,
+      13
+    ],
+    "fields": [
+      "ns",
+      "shell_sizes",
+      "sigma_c_mean"
+    ],
+    "note": "sigma_c_mean truncated to completed pairs"
+  },
+  "307": {
+    "source": "spectral/o25/dpc_out/dpc_q307.npz",
+    "source_sha256_16": "c1564aba321a8963",
+    "pairs_K": 24,
+    "M_per_block": 16,
+    "window": [
+      3,
+      16
+    ],
+    "stored_window": null,
+    "fields": [
+      "ns",
+      "shell_sizes",
+      "sigma_c_mean"
+    ],
+    "note": "full sigma_c_mean"
+  },
+  "401": {
+    "source": "spectral/o25/dpc_out/dpc_q401.npz",
+    "source_sha256_16": "440f1e4c4110a003",
+    "pairs_K": 12,
+    "M_per_block": 8,
+    "window": [
+      4,
+      17
+    ],
+    "stored_window": null,
+    "fields": [
+      "ns",
+      "shell_sizes",
+      "sigma_c_mean"
+    ],
+    "note": "full sigma_c_mean"
+  },
+  "601": {
+    "source": "spectral/o25/dpc_out/dpc_q601.npz",
+    "source_sha256_16": "23b827678f114582",
+    "pairs_K": 12,
+    "M_per_block": 8,
+    "window": [
+      4,
+      19
+    ],
+    "stored_window": null,
+    "fields": [
+      "ns",
+      "shell_sizes",
+      "sigma_c_mean"
+    ],
+    "note": "full sigma_c_mean"
+  },
+  "_provenance": "Compact copies of the block-level observables actually used in the note; extracted 2026-07-21 from the O25 production and extended-campaign checkpoints of the Cosmochrony simulation workspace. Windows frozen as published."
+}

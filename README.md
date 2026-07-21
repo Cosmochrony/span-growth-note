@@ -38,8 +38,25 @@ $\beta^*$ in the projected-Yukawa mass factorisation.
 ## Repository layout
 
 - `tex/` — LaTeX source (`SpanGrowthNote.tex`) and bibliographies
+- `code/` — `span_growth_reproduce.py`, the single reproduction script
+- `data/` — compact copies of the block-level observables actually used (frozen windows and per-checkpoint
+  provenance in `data/provenance.json`; about 47 kB total)
+- `figures/` — `effective_exponent_crossing.pdf`, produced by the script (PDF only)
 - `compile.sh` — full compile cycle (`pdflatex -> bibtex -> pdflatex x2`) into `out/` (generated, git-ignored)
 - `zenodo.json` — publication metadata (concept DOI)
+
+## Reproducing the numerical results
+
+From the repository root, with `numpy` and `matplotlib` installed:
+
+```bash
+python code/span_growth_reproduce.py
+```
+
+This recomputes the exact spheres of $\mathrm{Heis}_3(\mathbb{Z})$, every window-effective exponent of the
+paper's table (with the bootstrap standard errors of the $q \ge 307$ rows reproduced exactly under the
+documented seed), the 27 window-shift and knee-trimming robustness variants, the $\log(n{+}1)$ convention
+check, and regenerates `figures/effective_exponent_crossing.pdf`.
 
 ## Context
 
