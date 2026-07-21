@@ -77,19 +77,26 @@ every polynomial growth dimension $D > 2$.
 The square-root frontier factor --- and with it the additive $\tfrac{1}{2}$ of the cascade-exponent law ---
 is therefore specific to expander-type substrates; on Heisenberg graphs the capacity-to-growth map on the
 growth branch is $\beta = D - \dc$.
-Pipeline data at $q \le 211$ illustrate the classification; the window-effective exponents sit close to the
-marginal boundary $\dc \approx D$, an observation recorded without asymptotic claim.
+Pipeline data illustrate the classification: the window-effective exponents make contact near $q = 211$
+($\dc^{\mathrm{eff}} = 3.748$ vs $D_{\mathrm{eff}} = 3.753$) and separate strictly for $q \ge 307$, with
+$\dc^{\mathrm{eff}} - D_{\mathrm{eff}}$ between $-0.21$ and $-0.49$ at $7$--$15$ standard errors of the
+inter-pair bootstrap, a sign stable across all $27$ window-shift and knee-trimming variants and under both
+logarithmic conventions.
+The contact is therefore transitional in the accessible data --- the span sits in the growth branch at the
+largest measured primes --- and no current indication forces $\dc = D$; the statement concerns
+window-effective exponents only, with no asymptotic claim.
 The polynomial span exponent studied here is distinct from the exponential per-shell rate carried by the
 symbol $\bstar$ in the projected-Yukawa mass factorisation; the two objects are separated explicitly.
 
 \medskip
 \noindent\textbf{Interpretive status.}
 The classification theorem and the two no-go corollaries are proved under explicit power-law hypotheses; the
-numerical exponents are finite-window measurements; the near-marginality $\dc \approx D$ is an observation
-whose asymptotic fate is open.
+numerical exponents are finite-window measurements; the $q = 211$ near-contact is resolved, within the
+accessible data, as a transitional crossing of window-effective exponents, while the asymptotic value of
+$\dc$ remains open.
 As a structural reading, span growth on an emergent relational substrate is governed by a competition between
 geometric opening (volume growth) and capacity decay (novelty exhaustion); at the measured windows the two
-sit near balance.
+pass through near-balance transitionally and separate at the largest measured primes.
 This reading is an interpretation, not a result.
 \end{abstract}
 
@@ -322,11 +329,14 @@ Three native facts frame everything that follows.
 \section{Numerical illustration}
 \label{sec:numerics}
 
-The classification is illustrated on the programme's production data~\cite{Beau2026a29}, at the five primes
-$q \in \{29, 61, 101, 151, 211\}$, using each dataset's stored pre-saturation window $[n_0, n_1]$, the
-per-shell $\sigma_c$ averaged over the sampled conjugate pair-blocks, and only exponents (never amplitudes).
+The classification is illustrated on the programme's production data~\cite{Beau2026a29}, at the eight primes
+$q \in \{29, 61, 101, 151, 211, 307, 401, 601\}$, using each dataset's published pre-saturation window
+$[n_0, n_1]$, the per-shell $\sigma_c$ averaged over the sampled conjugate pair-blocks (never a
+reconstruction from the pair product), and only exponents (never amplitudes).
 For $q = 211$ the direct block-level dataset (70 pairs, $M = 20$ vectors per block, window $[3,13]$) is
-used.
+used; the extended-campaign datasets carry reduced sampling ($K = 24$ pairs, $M = 16$ at $q = 307$;
+$K = 12$, $M = 8$ at $q \in \{401, 601\}$), so their $\dc^{\mathrm{eff}}$ values are quoted with the
+standard error of a $2000$-resample bootstrap over pairs.
 
 \begin{table}[ht]
   \centering
@@ -343,7 +353,10 @@ used.
     61  & $[2,8]$  & 5.31 & 3.39 & 0.19 & saturation side \\
     101 & $[3,11]$ & 5.04 & 3.71 & 0.31 & saturation side \\
     151 & $[3,13]$ & 4.23 & 3.75 & 0.45 & saturation side \\
-    211 & $[3,13]$ & 3.748 & 3.753 & 0.558 & marginal within resolution \\
+    211 & $[3,13]$ & 3.748 & 3.753 & 0.558 & contact within resolution \\
+    307 & $[3,16]$ & $3.591 \pm 0.017$ & 3.798 & 0.630 & growth side \\
+    401 & $[4,17]$ & $3.613 \pm 0.040$ & 3.881 & 0.665 & growth side \\
+    601 & $[4,19]$ & $3.402 \pm 0.034$ & 3.894 & 0.746 & growth side \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -354,19 +367,26 @@ Corollary~\ref{cor:t1} by three decades of scaling.
 Second, the constant that Corollary~\ref{cor:t3} rules out would have to vary by a factor $53$ ($q = 61$) to
 $67$ ($q = 151$) within a single fitting window --- an illustration only, since the corollary is analytic.
 Third, the window-effective exponents drift in opposite directions as $q$ grows
-($\dc^{\mathrm{eff}}$ descending $5.97 \to 3.748$, $D_{\mathrm{eff}}$ ascending $2.98 \to 3.753$) and cross
-near $q = 211$, where $\dc^{\mathrm{eff}} = 3.74810$ and $D_{\mathrm{eff}} = 3.75262$.
+($\dc^{\mathrm{eff}}$ descending, $D_{\mathrm{eff}}$ ascending), make contact near $q = 211$
+($\dc^{\mathrm{eff}} = 3.74810$ vs $D_{\mathrm{eff}} = 3.75262$), and separate strictly beyond:
+$\dc^{\mathrm{eff}} - D_{\mathrm{eff}} = -0.207$, $-0.268$, $-0.492$ at $q = 307$, $401$, $601$, i.e.\
+$11.9$, $6.7$, $14.5$ standard errors of the inter-pair bootstrap.
 
-\begin{remark}[Near-marginality: an observation, not a claim]
+\begin{remark}[The $q = 211$ contact is a transitional crossing]
   \label{rem:marginal}
-  The $q = 211$ coincidence concerns window-effective exponents, not the asymptotic pair
-  $(\dc, \Dhom = 4)$; because the two drift in opposite directions with the window, a transitional crossing
-  is a live explanation.
+  The contact and the subsequent separation concern window-effective exponents, not the asymptotic pair
+  $(\dc, \Dhom = 4)$.
+  Within the accessible data the resolution is nevertheless unambiguous: the sign of
+  $\dc^{\mathrm{eff}} - D_{\mathrm{eff}}$ is negative for all $27$ variants obtained by shifting the window
+  bounds ($n_0 \pm 1$) and trimming the knee ($n_1$, $n_1 - 1$, $n_1 - 2$) at $q \in \{307, 401, 601\}$,
+  and under both logarithmic conventions ($\log n$ and the campaign's $\log(n{+}1)$, where the gaps are
+  $-0.235$, $-0.299$, $-0.548$).
+  The contact at $q = 211$ is therefore transitional in the accessible data, the span sits in the growth
+  branch at the largest measured primes, and no current indication forces $\dc = D$ --- the question of a
+  mechanism tying capacity decay to volume growth does not arise on the present evidence.
   Under the programme's asymptotic estimate $\dc \approx 3.72$~\cite{Beau2026a20,Beau2026a29} the growth
   branch applies with $\beta_{\mathrm{Heis}} \approx 0.28$; the asymptotic value of $\dc$, and hence the
   asymptotic branch, remains open.
-  The value $\dc \approx 3.72$ sits between $D - 1 = 3$ (constant novelty per shell) and $D = 4$
-  (logarithmic span growth).
 \end{remark}
 
 \section{Consequences for the admissibility programme}
@@ -398,8 +418,10 @@ analytically ($r/|B_n| \to 0$ for every $\dc > 0$), and excludes any uniform squ
 $D > 2$.
 The additive $\tfrac{1}{2}$ of the cascade-exponent law is thereby identified as expander-specific; the
 Heisenberg capacity-to-growth map on the growth branch is $\beta_{\mathrm{Heis}} = D - \dc$.
-The window-effective exponents of the production data sit near the marginal boundary $\dc \approx D$; whether
-this is a transitional crossing or a structural balance is an open question, recorded here as an observation.
+The window-effective exponents of the production data make contact near $q = 211$ and separate strictly for
+$q \ge 307$, with a sign stable across all window-shift and knee-trimming variants and both logarithmic
+conventions: the contact is a transitional crossing in the accessible data, no current indication forces
+$\dc = D$, and the asymptotic value of $\dc$ remains open.
 
 \subsection*{Interpretive outlook}
 
@@ -407,13 +429,14 @@ this is a transitional crossing or a structural balance is an open question, rec
 Read structurally, the theorem says that the growth of resolved relational structure on an emergent substrate
 is a competition between two exponents only: the geometric opening of the substrate (volume growth $D$) and
 the exhaustion of projective novelty (capacity decay $\dc$).
-On the programme's substrate, at the measured windows, the two sit near balance, at the edge where resolved structure grows
-only logarithmically --- a regime in which effective degrees of freedom would remain scarce no matter how
-large the explored configuration space becomes.
-Whether this near-balance is a finite-size coincidence or a structural principle --- capacity decay tied to
-volume growth --- is precisely the open question the classification isolates; if structural, it would give
-the programme a geometric reason for the scarcity of emergent degrees of freedom, but no such claim is made
-here.
+On the programme's substrate the measured windows pass through near-balance transitionally --- contact near
+$q = 211$, then strict separation on the growth side --- so that, on the present evidence, the near-balance
+is a crossing rather than a structural principle, and no mechanism tying capacity decay to volume growth is
+called for.
+The regime the crossing leaves behind is still one of slow polynomial growth
+($\beta_{\mathrm{Heis}} = D - \dc \approx 0.28$ under the programme's asymptotic estimate): resolved
+relational structure accumulates far more slowly than the explored configuration space --- but no structural
+claim beyond the classification is made here.
 
 \bibliographystyle{plain}
 \bibliography{cosmochrony-bibliography,external-refs}
