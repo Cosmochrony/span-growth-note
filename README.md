@@ -30,12 +30,14 @@ which the capacities are measured.
 The no-go has three independent legs, each scoped to the constructions the corpus defines:
 
 1. **No valence--exploration proportionality**: proportionality forces a vanishing capacity exponent, and it
-   fails for both native realisations of the LPS valence --- outright at fixed $q$ by the dimension count
-   $r(n) \le q$ against $|B_n| \to q^3$.
+   fails for both native realisations of the LPS valence --- for the span realisation outright at fixed $q$,
+   by the dimension count $r(n) \le q$ against $|B_n| \to q^3$; for the bounded effective valence by
+   boundedness.
 2. **No square-root frontier, no native flux carrier**: the native frontier is a power of the explored
-   volume, $|S_n| \asymp |B_n|^{3/4}$ (two-sided), not of the achieved span; no uniform constant restores
-   the $\sqrt{r}$ form for $D > 2$, and the bounded-flux constant $c_{\mathrm{BI}}$ has no native carrier
-   because the explored volume is autonomous on a fixed graph.
+   volume, $|S_n| \asymp |B_n|^{3/4}$ (in dyadic average, with exact two-sided constants on the enumerated
+   range), not of the achieved span; no uniform constant restores the $\sqrt{r}$ form for $D > 2$, and the
+   bounded-flux constant $c_{\mathrm{BI}}$ has no native carrier because the explored volume is autonomous
+   on a fixed graph.
 3. **Pair and coordinate obstructions**: no native growth process carrying
    $\sigma_{\mathrm{pair}} = \sigma_c \sigma_{q-c}$ is defined or derived in the corpus, and the exponent
    coordinates of the conversion law ($\alpha$ against valence, $\delta$ against shell index) coincide only
