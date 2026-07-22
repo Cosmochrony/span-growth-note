@@ -26,11 +26,12 @@
   linkcolor=black,
   citecolor=black,
   urlcolor=black,
-  pdftitle={Capacity Decay Determines Span-Growth Universality on Heisenberg Graphs},
+  pdftitle={Native Span Growth from Capacity Decay and the Failure of the Heisenberg Capacity-to-Rate Transfer},
   pdfauthor={J\'{e}r\^{o}me Beau},
-  pdfsubject={Three-branch classification of relational span growth on polynomial-growth Cayley graphs},
+  pdfsubject={Span-growth classification on polynomial-growth Cayley graphs and the no-go for the
+    expander-derived capacity-to-rate conversion on the Heisenberg substrate},
   pdfkeywords={Heisenberg group, Cayley graph, projective capacity, span growth, Bass--Guivarc'h dimension,
-    growth equation, spectral admissibility, cascade exponent}
+    growth equation, capacity-to-rate transfer, spectral admissibility, cascade exponent, exponent estimator}
 }
 
 \newtheorem{theorem}{Theorem}[section]
@@ -48,8 +49,10 @@
 \newcommand{\Dhom}{D_{\mathrm{hom}}}
 \newcommand{\bstar}{\beta^{*}}
 
-\title{Capacity Decay Determines Span-Growth Universality on Heisenberg Graphs\\
-  \large A Three-Branch Classification, and the Substrate Dependence of the Cascade-Exponent Law}
+\title{Native Span Growth from Capacity Decay\\
+  and the Failure of the Heisenberg Capacity-to-Rate Transfer\\
+  \large A Three-Branch Classification with Its Rigorous Status, and the Substrate No-Go\\
+  \large for the Expander-Derived Cascade-Exponent Law}
 \author{J\'er\^ome Beau\\
   \small Independent Researcher, France; jerome.beau@cosmochrony.org}
 \date{2026}
@@ -59,52 +62,60 @@
 
 \begin{abstract}
 The spectral admissibility programme measures a projective block capacity $\sigma_c(n)$ along the
-breadth-first cascade of the Heisenberg Cayley graph, decaying as a power law $\sigma_c(n) \sim a\,n^{-\dc}$,
-and converts capacity exponents into cascade growth exponents through the structural relation
-$\beta = 1/(\delta + \tfrac{1}{2})$, derived on Ramanujan--Lubotzky--Phillips--Sarnak (LPS) relaxation graphs.
-The present note derives the span-growth law that the Heisenberg substrate itself imposes.
-The cumulative fingerprint span $r(n)$ obeys the exact increment identity
-$\Delta r(n) = \sigma_c(n)\,|S_n|$, and the exact breadth-first spheres of $\Heis$ grow polynomially with
-homogeneous dimension $D = 4$.
-Asymptotic summation then yields a complete three-branch classification, depending only on $(\dc, D)$:
-polynomial span growth $r(n) \sim n^{D-\dc}$ for $\dc < D$; logarithmic growth for $\dc = D$; saturation
-$r_\infty - r(n) \sim n^{-(\dc - D)}$ for $\dc > D$.
-Two structural consequences follow.
-First, the span is never proportional to the number of configurations reached: $r(n)/|B_n| \to 0$ for every
-$\dc > 0$, so the valence--exploration proportionality that closes the LPS growth equation does not transpose
-to this substrate.
-Second, no uniform constant $c$ can sustain the LPS-form bound $\Delta r \le c\,\sigma_c \sqrt{r}$: since
-$r(n) \le |B_n|$, any such constant must exceed $|S_n|/\sqrt{|B_n|} \asymp n^{D/2-1}$, which diverges for
-every polynomial growth dimension $D > 2$.
-The square-root frontier factor --- and with it the additive $\tfrac{1}{2}$ of the cascade-exponent law ---
-is therefore specific to expander-type substrates; on Heisenberg graphs the capacity-to-growth map on the
-growth branch is $\beta = D - \dc$.
-Pipeline data illustrate the classification: the window-effective exponents make contact near $q = 211$
-($\dc^{\mathrm{eff}} = 3.748$ vs $D_{\mathrm{eff}} = 3.753$) and separate strictly for $q \ge 307$, with
-$\dc^{\mathrm{eff}} - D_{\mathrm{eff}}$ between $-0.21$ and $-0.49$ at $6.7$--$14.5$ standard errors of the
-inter-pair bootstrap, a sign stable across all $27$ window-shift and knee-trimming variants and under both
-logarithmic conventions.
-The contact is therefore transitional in the accessible data --- the span sits in the growth branch at the
-largest measured primes --- and no current indication forces $\dc = D$; the statement concerns
-window-effective exponents only, with no asymptotic claim.
-The polynomial span exponent studied here is distinct from the exponential per-shell rate carried by the
-symbol $\bstar$ in the projected-Yukawa mass factorisation; the two objects are separated explicitly.
+breadth-first cascade of the Heisenberg Cayley graph and converts capacity exponents into cascade growth
+exponents through the structural relation $\beta = 1/(\delta + \tfrac{1}{2})$, derived on
+Ramanujan--Lubotzky--Phillips--Sarnak (LPS) relaxation graphs.
+The present note establishes the span-growth law that the Heisenberg substrate itself imposes, states its
+rigorous status, and proves that the expander-derived conversion law does not transfer to the substrate on
+which the capacities are measured.
+The cumulative fingerprint span $r(n)$ obeys the exact increment identity $\Delta r(n) = \sigma_c(n)\,|S_n|$,
+and the exact breadth-first spheres of $\Heis$ grow polynomially with homogeneous dimension $D = 4$.
+For real-valued weight sequences with power-law decay, summation yields a complete three-branch
+classification depending only on $(\dc, D)$: polynomial span growth $r(n) \sim n^{D-\dc}$ for $\dc < D$,
+logarithmic growth at $\dc = D$, saturation for $\dc > D$.
+Because the measured increments are integers, the pointwise power-law hypothesis is unrealizable whenever
+$\dc > D - 1$ --- a range that includes the measured windows --- and the classification reaches the measured
+rank only through an exact finite-window formulation with two-sided bounds; every numerical exponent
+statement is window-scoped, and no joint large-$q$ limit is claimed.
+The transfer no-go has three independent legs, each scoped to the constructions the corpus defines.
+Valence--exploration proportionality forces a vanishing capacity exponent and fails for both native
+realisations of the valence --- outright at fixed $q$ by the dimension count $r \le q$ against
+$|B_n| \to q^3$.
+The native frontier is a power of the explored volume, $|S_n| \asymp |B_n|^{3/4}$, not of the achieved span:
+no uniform constant can restore the square-root frontier form for $D > 2$, so the additive $\tfrac12$ is
+expander-specific, and the bounded-flux constant acquires no native carrier because the explored volume is
+autonomous on a fixed graph.
+Finally, the pair observable $\sigma_{\mathrm{pair}} = \sigma_c\sigma_{q-c}$ carries no defined native growth
+process, and the exponent coordinates of the conversion law ($\alpha$ against valence, $\delta$ against shell
+index) coincide only in the reduced filling model, which fails natively; the general
+separation-of-variables algebra is itself coordinate-honest and returns the native law $\beta = D - \dc$ on
+the growth branch.
+Two consequences for the block-level analysis follow: the shell-growth factor $D - 1$ is the native boundary
+term, entering additively and never inside a reciprocal, while intra-window slopes are invariant under
+constant normalisations; and fitting a power law against the shifted logarithm $\log(n{+}1)$ inflates the
+exponent by a computable $8$--$13\%$ on the production windows.
+Window-effective exponents on the production data make contact near $q = 211$ and separate strictly for
+$q \ge 307$, a sign stable across all window-shift and knee-trimming variants and both logarithmic
+conventions; the contact is transitional in the accessible data and the asymptotic value of $\dc$ remains
+open.
+The polynomial span exponent is distinct from the exponential per-shell rate carried by the symbol $\bstar$
+in the projected-Yukawa mass factorisation; the two objects are separated explicitly.
 
 \medskip
 \noindent\textbf{Interpretive status.}
-The classification theorem and the two no-go corollaries are proved under explicit power-law hypotheses; the
-numerical exponents are finite-window measurements; the $q = 211$ near-contact is resolved, within the
-accessible data, as a transitional crossing of window-effective exponents, while the asymptotic value of
-$\dc$ remains open.
-As a structural reading, span growth on an emergent relational substrate is governed by a competition between
-geometric opening (volume growth) and capacity decay (novelty exhaustion); at the measured windows the two
-pass through near-balance transitionally and separate at the largest measured primes.
+The classification and the no-go results are proved under explicit, separately stated hypotheses; the
+numerical exponents are finite-window measurements; nothing here modifies a capacity measurement.
+As a structural reading, the growth of resolved relational structure on an emergent substrate is a
+competition between geometric opening (volume growth) and novelty exhaustion (capacity decay), and a
+conversion law between the two is a property of the substrate's geometry, not of the cascade alone: changing
+the geometry changes the law.
 This reading is an interpretation, not a result.
 \end{abstract}
 
 \medskip
 \noindent\textbf{Keywords:} Heisenberg group, Cayley graph, projective capacity, span growth,
-Bass--Guivarc'h dimension, growth equation, spectral admissibility, cascade exponent.
+Bass--Guivarc'h dimension, growth equation, capacity-to-rate transfer, spectral admissibility,
+cascade exponent, exponent estimator.
 
 \newpage
 \tableofcontents
@@ -139,13 +150,13 @@ impose}, using only objects native to a single Heisenberg BFS, with no LPS impor
 \subsection{Result}
 \label{ssec:result}
 
-The answer is a complete and elementary classification.
+The answer is a complete and elementary classification, together with a three-legged no-go for the transfer
+of relation~\eqref{eq:lps-law} to the measurement substrate.
 The cumulative fingerprint span $r(n)$ --- the number of independent relational directions resolved up to
 BFS depth $n$ --- satisfies the exact increment identity $\Delta r(n) = \sigma_c(n)\,|S_n|$, where
 $\sigma_c$ is the per-shell block capacity and $|S_n|$ the BFS sphere.
-With the exact polynomial sphere growth of $\Heis$ and a power-law capacity decay
-$\sigma_c(n) \sim a\,n^{-\dc}$, asymptotic summation gives
-(Theorem~\ref{thm:classification}):
+For real-valued weight sequences with power-law decay $\sigma_c(n) \sim a\,n^{-\dc}$ and the exact
+polynomial sphere growth of $\Heis$, summation gives (Theorem~\ref{thm:classification}):
 \begin{equation}
   \label{eq:branches}
   \begin{array}{ll}
@@ -160,11 +171,28 @@ Saturation begins strictly at $\dc > D$; the capacity-to-growth map on the growt
   \beta_{\mathrm{Heis}} \;=\; D - \dc \qquad (\dc < D),
 \end{equation}
 and is not of the form~\eqref{eq:lps-law}.
-Two corollaries make the substrate dependence of~\eqref{eq:lps-law} precise.
-Corollary~\ref{cor:t1} (no valence--exploration proportionality): $r(n)/|B_n| \to 0$ for every $\dc > 0$.
-Corollary~\ref{cor:t3} (no square-root frontier): no uniform constant sustains
-$\Delta r \le c\,\sigma_c\sqrt{r}$ on any polynomial-growth substrate with $D > 2$.
-Both are analytic; neither depends on numerical fits.
+The rank $\Delta r(n)$ is integer-valued, and for $\dc > D - 1$ --- a range that includes the measured
+windows --- no integer sequence can realise the pointwise power-law hypothesis
+(Remark~\ref{rem:integrality}); the classification therefore reaches the measured rank only through the
+exact finite-window formulation of Proposition~\ref{prop:window}, and every numerical exponent statement in
+this note is window-scoped.
+The transfer no-go consists of three independent statements, each scoped to the constructions the corpus
+defines.
+Valence--exploration proportionality forces a vanishing capacity exponent
+(Proposition~\ref{prop:t1}) and fails for both native realisations of the LPS valence --- at fixed $q$
+outright, by the dimension count $r(n) \le q$ against $|B_n| \to q^3$ (Corollary~\ref{cor:dimcount}).
+The native frontier is a power of the explored volume, $|S_n| \asymp |B_n|^{3/4}$
+(Lemma~\ref{lem:theta}), not of the achieved span: no uniform constant sustains
+$\Delta r \le c\,\sigma_c\sqrt{r}$ for $D > 2$ (Corollary~\ref{cor:t3}), and the bounded-flux constant
+$\cBI$ has no native carrier because the explored volume is autonomous on a fixed graph
+(Remark~\ref{rem:bi}).
+The pair observable carries no defined native growth process, and the exponent coordinates of the
+conversion law coincide only in the reduced filling model, which fails natively
+(Section~\ref{sec:obstructions}); the separation-of-variables algebra itself is coordinate-honest and
+returns~\eqref{eq:heis-law} (Remark~\ref{rem:selfconsistency}).
+Consequences for the block-level analysis --- the native placement of the shell-growth factor $D - 1$ and
+the quantified estimator inflation of the shifted-logarithm convention --- are collected in
+Section~\ref{sec:o14}.
 
 \subsection{What this note does not claim}
 \label{ssec:scope}
@@ -174,9 +202,14 @@ O22~\cite{Beau2026a26}, the threshold derivation of O23~\cite{Beau2026a27}, or t
 O24~\cite{Beau2026a28}, and makes no statement about the numerical value of any asymptotic exponent.
 It establishes in which geometric regime the conversion law~\eqref{eq:lps-law} can be derived, and what
 replaces it on the substrate where the capacities are actually measured.
-Throughout, statements are asymptotic on the infinite group $\Heis$, equivalently in the double limit
-$q \to \infty$ with $n$ in the wraparound-free pre-saturation regime; at fixed $q$ the span is bounded and
-necessarily saturates.
+The no-go statements are scoped to the native realisations the corpus defines: they exclude neither a
+future, differently constructed native valence nor a future construction of a pair-level growth process,
+each of which would carry its own derivation obligations.
+Asymptotic statements concern real-valued weight sequences on the infinite group $\Heis$
+(Theorem~\ref{thm:classification}); statements about the measured integer rank are finite-window statements
+in the sense of Proposition~\ref{prop:window}.
+At fixed $q$ the span is bounded and necessarily saturates; a joint limit $q \to \infty$, $n = n(q) \to
+\infty$ is not claimed, and Remark~\ref{rem:window-scope} records what such a construction would require.
 
 \section{Setting and native definitions}
 \label{sec:setting}
@@ -193,6 +226,16 @@ analysis~\cite{Beau2026ccnote}) gives $s_{22} = 16{,}934$ and $|B_{22}| = 99{,}6
 $3.10$ and $3.99$ over $n \in [10, 22]$.
 The isoperimetric ratio $|S_n|/|B_n| \approx 3.5/n$ vanishes: this substrate has no expander Cheeger
 constant, in contrast with the Ramanujan--LPS family~\cite{LPS88}.
+
+Three regimes must be kept separate: the infinite group $\Heis$; the local pre-wraparound regime of
+$\Heisq$, where the finite-quotient balls are isometric to those of $\Heis$; and the saturation regime of
+the finite quotient.
+The ball-isometry criterion $q > 2\Gamma(n) + 1$, with $\Gamma(n) = \lfloor n^2/4 \rfloor$ the central
+extent of $B_n$~\cite{Beau2026ccnote}, controls the second regime: the production windows at
+$q \in \{307, 401, 601\}$ (depths $n \le 19$) are entirely pre-wraparound, as are the windows of the larger
+primes of the earlier campaign ($2\Gamma(19) + 1 = 181$), while the smallest primes straddle the regimes
+($q = 29$ wraps outright, since $|B_{16}| = 27{,}905 > 29^3$).
+Every statement below names the regime in which it holds.
 
 \subsection{Capacity, span, and the exact increment identity}
 \label{ssec:definitions}
@@ -229,14 +272,17 @@ Three native facts frame everything that follows.
   contrast with the LPS equation is intended.
 \end{remark}
 
-\section{The classification theorem}
+\section{The classification theorem and its rigorous status}
 \label{sec:theorem}
 
-\begin{theorem}[Three-branch span-growth classification]
+\subsection{The abstract theorem: real-valued weights}
+\label{ssec:abstract-theorem}
+
+\begin{theorem}[Three-branch span-growth classification, real weights]
   \label{thm:classification}
-  Suppose $|S_n| = \kappa\, n^{D-1}(1 + o(1))$ with $D > 1$, and
-  $\sigma_c(n) = a\, n^{-\dc}(1 + o(1))$ with $a, \dc > 0$.
-  Then the cumulative span $r(n) = \sum_{k \le n} \sigma_c(k)\,|S_k|$ obeys
+  Let $(s_k)$ and $(\sigma_k)$ be real-valued sequences with $s_k = \kappa\, k^{D-1}(1 + o(1))$, $D > 1$,
+  and $\sigma_k = a\, k^{-\dc}(1 + o(1))$, $a, \dc > 0$.
+  Then the weighted sum $r(n) = \sum_{k \le n} \sigma_k\, s_k$ obeys
   \[
     \begin{array}{ll}
       \dc < D: & r(n) = \dfrac{a\kappa}{D-\dc}\, n^{\,D-\dc}\,(1 + o(1)),\\[3mm]
@@ -249,7 +295,7 @@ Three native facts frame everything that follows.
 \end{theorem}
 
 \begin{proof}
-  The summand is $\sigma_c(k)|S_k| = a\kappa\, k^{(D-1)-\dc}(1+o(1))$.
+  The summand is $\sigma_k s_k = a\kappa\, k^{(D-1)-\dc}(1+o(1))$.
   For $\dc < D$ the exponent exceeds $-1$, and comparison of the partial sum with
   $\int^n t^{(D-1)-\dc}\,\mathrm{d}t = n^{D-\dc}/(D-\dc)$ gives the first branch; the $o(1)$ factors
   transfer because the tail dominates the sum.
@@ -268,6 +314,71 @@ Three native facts frame everything that follows.
   For $\Heis$, $D = \Dhom = 4$ exactly~\cite{Bass1972,Guivarch1973}.
 \end{remark}
 
+\subsection{Integer rank: the finite-window formulation}
+\label{ssec:window}
+
+\begin{remark}[Integrality obstructs the pointwise hypotheses]
+  \label{rem:integrality}
+  The measured object is not a real weight: $\Delta r(n)$ is an integer.
+  For $\dc > D - 1$ the product $a\kappa\, n^{D-1-\dc}$ tends to zero, so no integer-valued sequence can
+  satisfy $\Delta r(n) = \sigma_c(n)|S_n|$ with a pointwise law $\sigma_c(n) = a\,n^{-\dc}(1+o(1))$,
+  $a > 0$: eventually either $\Delta r(n) = 0$ exactly --- forcing $\sigma_c(n) = 0$ --- or
+  $\Delta r(n) \ge 1$ --- violating the decay.
+  This range includes the window-effective values $3 < \dc^{\mathrm{eff}} < 4$ measured on the growth
+  branch (Section~\ref{sec:numerics}), not only the saturation branch.
+  Theorem~\ref{thm:classification} therefore applies to the integer rank only through the finite-window
+  formulation below, never through a pointwise asymptotic hypothesis on $\sigma_c$.
+\end{remark}
+
+\begin{proposition}[Effective pre-saturation window law]
+  \label{prop:window}
+  Fix a window $m < k \le n$ in the pre-saturation regime and suppose the finite two-sided bounds
+  \begin{equation}
+    \label{eq:window-bounds}
+    a_-\, k^{-\dc} \;\le\; \sigma_c(k) \;\le\; a_+\, k^{-\dc},
+    \qquad
+    \kappa_-\, k^{D-1} \;\le\; |S_k| \;\le\; \kappa_+\, k^{D-1},
+  \end{equation}
+  with constants $0 < a_- \le a_+$ and $0 < \kappa_- \le \kappa_+$, for all $k$ in the window.
+  Then
+  \begin{equation}
+    \label{eq:window-law}
+    a_-\kappa_- \sum_{k=m+1}^{n} k^{\,D-1-\dc}
+    \;\le\; r(n) - r(m) \;\le\;
+    a_+\kappa_+ \sum_{k=m+1}^{n} k^{\,D-1-\dc}.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Multiply the bounds in~\eqref{eq:window-bounds} through the identity $\Delta r(k) = \sigma_c(k)|S_k|$
+  (Lemma~\ref{lem:identity}) and sum over the window.
+\end{proof}
+
+\begin{remark}[Scope of every numerical exponent]
+  \label{rem:window-scope}
+  Statement~\eqref{eq:window-law} is exact, finite, and compatible with integer increments: it requires no
+  pointwise power law and no asymptotics, and the branch structure of~\eqref{eq:branches} describes the
+  window through the elementary comparison of $\sum_{k \le n} k^{D-1-\dc}$ with $n^{D-\dc}$, $\log n$, or a
+  constant.
+  Every numerical exponent statement in this note is a window statement in this sense.
+  At fixed $q$ the span is bounded ($r(n) \le \dim H_c = q$) and necessarily saturates.
+  A joint limit $q \to \infty$, $n = n(q) \to \infty$ would require, beyond the ball-isometry condition
+  $q > 2\Gamma(n(q)) + 1$ of Section~\ref{ssec:substrate}, a construction ensuring realizability of the
+  integer increments along the sequence --- an average over a growing number of blocks, or an amplitude
+  $a(q)$ with a rank margin.
+  No such construction is supplied here, and no joint-limit claim is made.
+\end{remark}
+
+\section{The valence--exploration no-go}
+\label{sec:nogo}
+
+The closure hypothesis of the LPS growth equation --- effective valence proportional to the number of
+configurations reached~\cite{Beau2026a8} --- admits exactly two native realisations on a fixed Heisenberg
+Cayley graph: the effective valence (new neighbours per frontier vertex), and the cumulative span $r(n)$ of
+Remark~\ref{rem:valence}.
+This section refutes the closure for both, and for both only: no statement is made about realisations the
+corpus does not define.
+
 \begin{corollary}[No valence--exploration proportionality]
   \label{cor:t1}
   Under the hypotheses of Theorem~\ref{thm:classification}, $r(n)/|B_n| \to 0$ for every $\dc > 0$.
@@ -279,6 +390,102 @@ Three native facts frame everything that follows.
 \begin{proof}
   $|B_n| \asymp n^D$ while $r(n)$ is $O(n^{D-\dc})$, $O(\log n)$, or bounded.
 \end{proof}
+
+Corollary~\ref{cor:t1} operates under the real-weight power-law hypotheses.
+The following two statements are sharper: the first needs only the window bounds of
+Proposition~\ref{prop:window}, the second needs no hypothesis at all.
+
+\begin{proposition}[Proportionality forces a vanishing capacity exponent]
+  \label{prop:t1}
+  Suppose $r(n) = \lambda\, |B_n|\,(1 + o(1))$ for some $\lambda > 0$ along the cascade, in a regime where
+  $|B_n|/n^D$ converges to a positive constant --- as it does on $\Heis$~\cite{Pansu1983}.
+  Then the shell-weighted mean capacity over dyadic windows converges to $\lambda$:
+  \begin{equation}
+    \label{eq:dyadic-mean}
+    \frac{r(2n) - r(n)}{|B_{2n}| - |B_n|}
+    \;=\;
+    \frac{\sum_{n < k \le 2n} \sigma_c(k)\,|S_k|}{\sum_{n < k \le 2n} |S_k|}
+    \;\longrightarrow\; \lambda \;>\; 0 .
+  \end{equation}
+  Consequently no window bound $\sigma_c(k) \le a_+ k^{-\delta}$ with $\delta > 0$
+  (Proposition~\ref{prop:window}) can hold on all sufficiently late dyadic windows: on $(n, 2n]$ the
+  left-hand side of~\eqref{eq:dyadic-mean} is at most $a_+ n^{-\delta} \to 0$.
+\end{proposition}
+
+\begin{proof}
+  The numerator is $r(2n) - r(n) = \lambda(|B_{2n}| - |B_n|) + o(|B_{2n}|)$, and the convergence of
+  $|B_n|/n^D$ gives $|B_{2n}| - |B_n| = (1 - 2^{-D})\,|B_{2n}|\,(1 + o(1))$, so the ratio tends to
+  $\lambda$.
+  The middle expression is the identity $\Delta r = \sigma_c |S_k|$ summed over the window; bounding
+  $\sigma_c(k) \le a_+ k^{-\delta} \le a_+ n^{-\delta}$ on $(n, 2n]$ bounds the weighted mean.
+\end{proof}
+
+\begin{remark}[One direction only]
+  \label{rem:one-direction}
+  The implication runs from proportionality to the vanishing of the decay exponent.
+  The converse is false without control of slow variations: $\sigma_c(k) = a/\log k$ has $\delta = 0$ in
+  the power-law sense, yet $r(n)/|B_n| \to 0$.
+  No converse is claimed or used.
+\end{remark}
+
+\begin{corollary}[Fixed-$q$ dimension count]
+  \label{cor:dimcount}
+  At fixed prime $q$, in every regime, $\Delta r(n) \le \dim H_c = q$~\cite{Beau2026a16} gives
+  $r(n) \le q$, while $|B_n| \to |\Heisq| = q^3$.
+  Hence $\limsup_n r(n)/|B_n| \le q^{-2}$ and proportionality with any $\lambda > 0$ fails outright ---
+  independently of any measurement, window, or power-law hypothesis.
+\end{corollary}
+
+\begin{remark}[The bounded-valence realisation]
+  \label{rem:bounded-valence}
+  The other native realisation of the LPS valence is the effective valence: new neighbours per frontier
+  vertex, $|S_{n+1}|/|S_n|$, bounded between $1$ and the degree $|S| = 4$.
+  A bounded sequence cannot be proportional to the unbounded $|B_n| \asymp n^4$, so the closure fails for
+  this realisation trivially.
+  With Corollary~\ref{cor:t1}, Proposition~\ref{prop:t1}, and Corollary~\ref{cor:dimcount} covering the
+  span realisation, the no-go covers both corpus realisations --- and only them.
+\end{remark}
+
+\section{Native multiplicative coupling and the lost square-root frontier}
+\label{sec:coupling}
+
+The increment identity of Lemma~\ref{lem:identity} is the native form of the multiplicative redundancy
+insertion of the LPS growth equation~\cite{Beau2026a10}: the novelty fraction multiplies the frontier,
+exactly and by definition.
+What changes across substrates is what the frontier is a power \emph{of}.
+
+\begin{lemma}[Frontier exponent of the explored volume]
+  \label{lem:theta}
+  In the infinite-group and pre-wrap\-around regimes, with two-sided constants,
+  $|S_n| \asymp |B_n|^{\theta}$ where $\theta = (D-1)/D = \tfrac{3}{4}$.
+\end{lemma}
+
+\begin{proof}
+  The growth series of $\Heis$ is rational for every finite generating set~\cite{DuchinShapiro2014}, so
+  $|S_n|$ is eventually quasi-polynomial; the two-sided ball growth $|B_n| \asymp n^4$~\cite{Bass1972,
+  Guivarch1973} pins its degree at $3$, whence $|S_n| \asymp n^3$ and $|S_n| \asymp |B_n|^{3/4}$.
+  The exact enumeration gives the window constants: $|S_n|/n^3 \in [1.46, 1.63]$ on $n \in [10, 31]$ and
+  $|B_n|/n^4 \in [0.4255, 0.4262]$ on $n \in [15, 31]$.
+  The general isoperimetric inequality $|\partial A| \gtrsim |A|^{(D-1)/D}$ for arbitrary finite sets under
+  polynomial growth~\cite{CoulhonSaloffCoste1993} is consistent with the statement but is not needed for
+  it.
+\end{proof}
+
+\begin{remark}[Finite-size frontier exponents]
+  \label{rem:theta-window}
+  On the measurement windows the effective exponent
+  $\mathrm{d}\log|S_n| / \mathrm{d}\log|B_n|$ is $0.78$ on $[10, 19]$ ($0.80$ on $[5, 19]$), decreasing
+  monotonically towards $\tfrac34$ ($0.771$ at $n = 19$, $0.763$ at $n = 31$); the window ball exponents
+  $D_{\mathrm{eff}} < 4$ of Table~\ref{tab:windows} reflect the same finite-size drift.
+\end{remark}
+
+The native growth law is therefore multiplicative against a power of the explored volume,
+$\Delta r(n) = \sigma_c(n)\,|S_n| \asymp \sigma_c(n)\,|B_n|^{3/4}$, not against a power of the achieved
+span.
+Converting $|B_n|^{\theta}$ into a power of $r$ requires a functional $r$--$|B_n|$ law; the linear law is
+refuted (Section~\ref{sec:nogo}), and would in any case yield $r^{3/4}$, not the $r^{1/2}$ of the LPS
+form.
+The next corollary closes the remaining route: no constant can restore the square-root form.
 
 \begin{corollary}[No uniform square-root frontier bound]
   \label{cor:t3}
@@ -309,6 +516,25 @@ Three native facts frame everything that follows.
   substrates and is not supplied here.
 \end{remark}
 
+\begin{remark}[No native carrier for the bounded-flux constant]
+  \label{rem:bi}
+  In the LPS derivation the bounded-flux constant $\cBI$ shapes the growth equation through a feedback
+  loop: the flux bound limits exploration, exploration grows the valence, and the valence sets the frontier
+  through which the flux acts~\cite{Beau2026a8}.
+  On a fixed Cayley graph the explored volume is autonomous: $|B_n|$ and $|S_n|$ are properties of the
+  graph, independent of $\sigma_c$ and of any dynamical bound, and the increment identity contains no
+  parameter.
+  The constant $\cBI$ can therefore constrain at most the dictionary between cascade rank and physical
+  time; it has no carrier in the native growth law.
+\end{remark}
+
+\section{Pair and exponent-coordinate obstructions}
+\label{sec:obstructions}
+
+The two remaining inputs of the transfer are the substitution of the pair exponent for the block exponent,
+and the identification of the capacity exponent with the redundancy exponent of the conversion law.
+Neither survives on the native side, in the following corpus-scoped sense.
+
 \begin{remark}[Two distinct exponents named beta]
   \label{rem:beta-category}
   The exponent $\beta_{\mathrm{Heis}} = D - \dc$ of~\eqref{eq:heis-law} is a polynomial growth exponent,
@@ -324,9 +550,88 @@ Three native facts frame everything that follows.
   block exponent $\dc$.
   The pair observable $\sigma_{\mathrm{pair}} = \sigma_c\,\sigma_{q-c}$~\cite{Beau2026a20} is a product with
   exponent $2\dc$ and is not a span increment; feeding $\delta_{\mathrm{pair}} = 2\dc$ into any growth law of
-  the present kind would require a product-to-span conversion that does not exist.
+  the present kind would require a product-to-span conversion that is not defined or derived in the corpus.
+  No native growth process carrying $\sigma_{\mathrm{pair}}$ --- one whose increment is
+  $\sigma_{\mathrm{pair}}|S_n|$, or any other --- is defined or derived in the corpus either; constructing
+  one would be a new derivation obligation, and its impossibility is not claimed.
   Theorem~\ref{thm:classification} therefore concerns $\dc$, the block-level exponent.
 \end{remark}
+
+\begin{proposition}[Exponent coordinates]
+  \label{prop:coordinates}
+  In the conversion law $\beta = 1/(\alpha + \tfrac12)$ of O6~\cite{Beau2026a10}, $\alpha$ is defined
+  against the valence: $R \sim p^{-\alpha}$.
+  A capacity exponent $\delta$ is measured against the shell index: $\sigma \sim n^{-\delta}$, in the
+  window sense of Proposition~\ref{prop:window}.
+  If $p \sim n^{\beta}$ on the window, then $\alpha = \delta/\beta$; the identification $\alpha = \delta$
+  holds exactly when $\beta = 1$, the reduced filling model $p(n) = n$ of O7~\cite{Beau2026a11}.
+  The reduced model fails natively: on the growth branch the window exponent of the span is
+  $D - \dc \ne 1$ throughout the measured range (Table~\ref{tab:windows}).
+  Substituting a shell-index exponent for $\alpha$ in~\eqref{eq:lps-law} is therefore a coordinate error
+  on this substrate, over and above the failure of the closure it presupposes.
+\end{proposition}
+
+\begin{remark}[The separation-of-variables algebra is coordinate-honest]
+  \label{rem:selfconsistency}
+  The general form behind~\eqref{eq:lps-law} is $\beta = 1/(\alpha + 1 - \theta_p)$, where $\theta_p$ is
+  the frontier exponent measured against the growing variable $p$ itself.
+  With the native window inputs on the growth branch --- $p = r \sim n^{D-\dc}$, redundancy exponent
+  $\alpha_R = \dc/(D-\dc)$, frontier-versus-span exponent $\theta_p = (D-1)/(D-\dc)$ --- it returns
+  \[
+    \frac{1}{\alpha_R + 1 - \theta_p}
+    \;=\; \frac{D-\dc}{\dc + (D-\dc) - (D-1)}
+    \;=\; D - \dc
+    \;=\; \beta_{\mathrm{Heis}} .
+  \]
+  The algebra is sound; what fails in the transfer are its inputs --- the closure
+  (Section~\ref{sec:nogo}), the frontier exponent (Corollary~\ref{cor:t3}), the redundancy object
+  (Remark~\ref{rem:pair}), and the coordinate identification (Proposition~\ref{prop:coordinates}).
+\end{remark}
+
+\section{Consequences for the block-level corrections and the exponent estimator}
+\label{sec:o14}
+
+\subsection{The shell-growth factor}
+\label{ssec:shell-factor}
+
+The block-level analysis of the exact setting~\cite{Beau2026a18,Beau2026a19} applies a shell-growth
+correction $D - 1$ and a normalisation term to the measured exponent before insertion
+into~\eqref{eq:lps-law}.
+On the native side the shell factor needs no correction because it is the boundary term itself: the
+increment carries the window exponent $D - 1 - \dc$, and the span the window exponent $D - \dc$, with
+$D - 1$ entering additively through $|S_n|$ --- never inside a reciprocal.
+A normalisation constant in $n$ (the $q$-normalised capacity variants) rescales the amplitudes $a_\pm$
+of~\eqref{eq:window-bounds} and leaves every intra-$q$ window slope unchanged.
+The inter-$q$ comparison at a $q$-dependent characteristic depth --- the $\log q / \log n^*$ term
+of~\cite{Beau2026a18} --- belongs to the estimator-and-comparison layer across primes and is outside the
+present analysis: nothing here derives or refutes it.
+
+\subsection{The shell-index convention}
+\label{ssec:estimator}
+
+\begin{proposition}[Estimator inflation under the shifted logarithm]
+  \label{prop:estimator}
+  Let $\sigma(k) = C\, k^{-\delta}$ exactly on an integer window $W$.
+  The ordinary least-squares slope of $\log \sigma$ against $\log(k+1)$ on $W$ is $-\delta'$ with
+  \[
+    \frac{\delta'}{\delta}
+    \;=\; \frac{\mathrm{Cov}_W\!\left(\log k,\, \log(k+1)\right)}{\mathrm{Var}_W\!\left(\log(k+1)\right)}
+    \;>\; 1 ;
+  \]
+  on $W = [3,19]$, $[5,19]$, $[8,19]$ the factor is $1.1321$, $1.1029$, $1.0815$ respectively.
+\end{proposition}
+
+\begin{proof}
+  Ordinary least squares of $y = -\delta \log k$ on the regressor $x = \log(k+1)$ has slope
+  $\mathrm{Cov}(x,y)/\mathrm{Var}(x)$; the factors are exact arithmetic on the window.
+\end{proof}
+
+Exponents fitted against the shifted logarithm on such windows therefore exceed the plain-logarithm
+values --- the convention in which the exponent is defined~\cite{Beau2026a20} --- by $8$--$13\%$.
+The gap columns of Section~\ref{sec:numerics} report both conventions for the crossing diagnostic; the
+proposition quantifies the conversion between them.
+Any value-level use of an exponent fitted under one convention inside a relation stated in the other is
+conditional on this conversion, at the fit windows actually used.
 
 \section{Numerical illustration}
 \label{sec:numerics}
@@ -339,6 +644,8 @@ For $q = 211$ the direct block-level dataset (70 pairs, $M = 20$ vectors per blo
 used; the extended-campaign datasets carry reduced sampling ($K = 24$ pairs, $M = 16$ at $q = 307$;
 $K = 12$, $M = 8$ at $q \in \{401, 601\}$), so their $\dc^{\mathrm{eff}}$ values are quoted with the
 standard error of a $2000$-resample bootstrap over pairs.
+All quoted exponents are window quantities in the sense of Proposition~\ref{prop:window}; none is an
+asymptotic claim (Remark~\ref{rem:integrality}).
 
 \begin{table}[ht]
   \centering
@@ -398,9 +705,10 @@ $11.9$, $6.7$, $14.5$ standard errors of the inter-pair bootstrap (Figure~\ref{f
   The contact at $q = 211$ is therefore transitional in the accessible data, the span sits in the growth
   branch at the largest measured primes, and no current indication forces $\dc = D$ --- the question of a
   mechanism tying capacity decay to volume growth does not arise on the present evidence.
-  Under the programme's asymptotic estimate $\dc \approx 3.72$~\cite{Beau2026a20,Beau2026a29} the growth
-  branch applies with $\beta_{\mathrm{Heis}} \approx 0.28$; the asymptotic value of $\dc$, and hence the
-  asymptotic branch, remains open.
+  Under the programme's window estimate $\dc \approx 3.72$~\cite{Beau2026a20,Beau2026a29} the growth
+  branch applies on the measured windows with $\beta_{\mathrm{Heis}} \approx 0.28$, read through
+  Proposition~\ref{prop:window}; the asymptotic value of $\dc$, and hence the asymptotic branch, remains
+  open.
 \end{remark}
 
 \subsection{Reproducibility and data provenance}
@@ -423,51 +731,81 @@ The figure is produced by the script, in PDF only.
 \section{Consequences for the admissibility programme}
 \label{sec:consequences}
 
-The results delimit, without modifying, the standing transfer chain.
+Three objects must be held separate.
+
+\emph{The native law.}
+What the measurement substrate imposes is the increment identity, the classification with its two-tier
+status (real weights asymptotically, integer rank through finite windows), and the growth-branch map
+$\beta_{\mathrm{Heis}} = D - \dc$ --- a polynomial span exponent for the block-level object, with every
+numerical value window-scoped.
+
+\emph{The transfer.}
+Relation~\eqref{eq:lps-law} applied to Heisenberg-measured exponents rests on inputs that fail natively,
+each in its own way: the closure is refuted for both corpus realisations of the valence
+(Section~\ref{sec:nogo}); the square-root frontier and with it the additive $\tfrac12$ are
+expander-specific, and the bounded-flux constant has no native carrier (Section~\ref{sec:coupling}); the
+pair observable carries no defined native growth process, and the coordinate identification
+$\alpha = \delta$ holds only in the reduced filling model (Section~\ref{sec:obstructions}).
 The measured capacity exponents~\cite{Beau2026a16,Beau2026a20,Beau2026a29}, the shell-alignment
 theorem~\cite{Beau2026a26}, the threshold derivation~\cite{Beau2026a27}, and the verticality
-result~\cite{Beau2026a28} are untouched.
-What changes is the status of the conversion law: relation~\eqref{eq:lps-law} is derived in an
-expander regime with growing valence and, by Corollaries~\ref{cor:t1} and~\ref{cor:t3}, cannot be re-derived
-on the polynomial substrate where the exponents are measured; the substrate's own conversion
-is~\eqref{eq:branches}--\eqref{eq:heis-law}.
+result~\cite{Beau2026a28} are untouched: the conditional status of the chain, recorded in the
+O-series~\cite{Beau2026a25,Beau2026a28}, is with respect to the fibre structure --- the present results
+show that the growth-equation side of the conditions cannot be discharged on the substrate where the
+exponents are measured, with the constructions the corpus defines.
 Any continued use of~\eqref{eq:lps-law} with Heisenberg-measured exponents therefore relies on a
 two-substrate identification --- LPS-type dynamics whose redundancy input is the Heisenberg capacity ---
 which must be stated as a hypothesis and defended on its own terms.
-This sharpens, in the direction of a concrete derivation target, the conditional status recorded in
-the O-series~\cite{Beau2026a25,Beau2026a28}.
+
+\emph{The phenomenological agreement.}
+The numerical proximity of $1/(\delta_{\mathrm{pair}} + \tfrac12)$ to the mass-fitted window of the
+amplification law is a coincidence check: the present results neither explain nor disturb it, and it
+carries no derivational weight on its own.
+Its structural derivation on the measurement substrate would require exactly the inputs shown here to
+fail; the two-substrate identification above is the only route left open, and it is a hypothesis, not a
+result.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
 On a single Heisenberg BFS, capacity decay determines span growth completely: the exact increment identity
 $\Delta r = \sigma_c |S_n|$, together with the exact polynomial sphere growth of homogeneous dimension
-$D = 4$, forces the three-branch classification~\eqref{eq:branches}, with polynomial growth for $\dc < D$,
-logarithmic growth at $\dc = D$, and strict saturation for $\dc > D$.
-The classification is universal in the pair $(\dc, D)$, refutes valence--exploration proportionality
-analytically ($r/|B_n| \to 0$ for every $\dc > 0$), and excludes any uniform square-root frontier bound for
-$D > 2$.
-The additive $\tfrac{1}{2}$ of the cascade-exponent law is thereby identified as expander-specific; the
-Heisenberg capacity-to-growth map on the growth branch is $\beta_{\mathrm{Heis}} = D - \dc$.
+$D = 4$, forces the three-branch classification~\eqref{eq:branches} for real-valued weights, and its exact
+finite-window formulation~\eqref{eq:window-law} for the measured integer rank --- the only form in which
+the classification reaches the data, since the pointwise power-law hypothesis is unrealizable by integer
+increments throughout the measured range $\dc > D - 1$.
+The expander-derived conversion law $\beta = 1/(\delta + \tfrac12)$ does not transfer to this substrate:
+valence--exploration proportionality fails for both native realisations of the valence --- outright at
+fixed $q$ by the dimension count --- the square-root frontier and the additive $\tfrac12$ are
+expander-specific, the bounded-flux constant has no native carrier, the pair observable carries no defined
+native growth process, and the coordinate identification $\alpha = \delta$ belongs to the reduced filling
+model only.
+The separation-of-variables algebra itself is coordinate-honest and returns the native growth-branch map
+$\beta_{\mathrm{Heis}} = D - \dc$.
+On the block-level side, the shell-growth factor $D - 1$ is the native boundary term, additive and outside
+any reciprocal, intra-window slopes are invariant under constant normalisations, and the shifted-logarithm
+convention inflates fitted exponents by a computable $8$--$13\%$ on the production windows; the inter-$q$
+estimator layer is left untouched.
 The window-effective exponents of the production data make contact near $q = 211$ and separate strictly for
 $q \ge 307$, with a sign stable across all window-shift and knee-trimming variants and both logarithmic
 conventions: the contact is a transitional crossing in the accessible data, no current indication forces
-$\dc = D$, and the asymptotic value of $\dc$ remains open.
+$\dc = D$, and the asymptotic value of $\dc$ remains open, as does any joint large-$q$ formulation
+(Remark~\ref{rem:window-scope}).
 
 \subsection*{Interpretive outlook}
 
 \textbf{Interpretation, not derived result.}
-Read structurally, the theorem says that the growth of resolved relational structure on an emergent substrate
-is a competition between two exponents only: the geometric opening of the substrate (volume growth $D$) and
-the exhaustion of projective novelty (capacity decay $\dc$).
-On the programme's substrate the measured windows pass through near-balance transitionally --- contact near
-$q = 211$, then strict separation on the growth side --- so that, on the present evidence, the near-balance
-is a crossing rather than a structural principle, and no mechanism tying capacity decay to volume growth is
-called for.
-The regime the crossing leaves behind is still one of slow polynomial growth
-($\beta_{\mathrm{Heis}} = D - \dc \approx 0.28$ under the programme's asymptotic estimate): resolved
-relational structure accumulates far more slowly than the explored configuration space --- but no structural
-claim beyond the classification is made here.
+Read structurally, the classification says that the growth of resolved relational structure on an emergent
+substrate is a competition between two exponents only: the geometric opening of the substrate (volume
+growth $D$) and the exhaustion of projective novelty (capacity decay $\dc$).
+The no-go adds a second structural lesson: a conversion law between capacity and growth is a property of
+the substrate's geometry, not of the cascade alone --- carrying such a law across substrates is a
+hypothesis about two geometries at once, and on the present evidence the expander law and the polynomial
+law are distinct, each correct in its own regime.
+On the programme's substrate the measured windows pass through near-balance transitionally --- contact
+near $q = 211$, then strict separation on the growth side --- and the regime the crossing leaves behind is
+one of slow polynomial growth ($\beta_{\mathrm{Heis}} = D - \dc \approx 0.28$ under the programme's window
+estimate): resolved relational structure accumulates far more slowly than the explored configuration space
+--- but no structural claim beyond the classification is made here.
 
 \bibliographystyle{plain}
 \bibliography{cosmochrony-bibliography,external-refs}
