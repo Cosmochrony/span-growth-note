@@ -218,7 +218,7 @@ two-sided senses of Lemma~\ref{lem:theta}.
 Exact BFS enumeration (reproduced here; first computed for the critical-coverage
 analysis~\cite{Beau2026ccnote}) gives $s_{22} = 16{,}934$ and $|B_{22}| = 99{,}689$, with fitted exponents
 $3.10$ and $3.99$ over $n \in [10, 22]$.
-The isoperimetric ratio satisfies $n\,|S_n|/|B_n| \in [3.40, 3.74]$ on $n \in [10, 31]$, so
+The isoperimetric ratio satisfies $n\,|S_n|/|B_n| \in [3.40, 3.82]$ on $n \in [10, 31]$, so
 $|S_n|/|B_n|$ vanishes as $\approx 3.6/n$: this substrate has no expander Cheeger constant, in contrast
 with the Ramanujan--LPS family~\cite{LPS88}.
 
@@ -263,8 +263,8 @@ Three native facts frame everything that follows.
 \begin{remark}[Sampled observables and the unit bound]
   \label{rem:sampled}
   The production pipeline samples several fingerprint vectors per block and shell; for such an observable
-  $\Delta r(n)$ is bounded by the per-shell sample count, not by $|S_n|$, and $\sigma_c(n)$ exceeds $1$
-  exactly where $|S_n|$ is smaller than that count.
+  $\Delta r(n)$ is bounded by the per-shell sample count, not by $|S_n|$, and $\sigma_c(n)$ can exceed $1$
+  only where $|S_n|$ is smaller than that count.
   On the production datasets this occurs only on the head shells, outside every fitted window
   (Section~\ref{sec:numerics}); the unit bound and $r(n) \le |B_n|$ concern the one-fingerprint-per-vertex
   object, and every analytic statement below uses only the identity and explicitly named bounds.
