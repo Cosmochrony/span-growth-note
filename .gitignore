@@ -3,3 +3,19 @@ pdfs/
 *.synctex.gz
 .DS_Store
 __pycache__/
+
+# Common build-artefact baseline
+**/.DS_Store
+.idea/
+.venv/
+media/
+**/__pycache__/
+*.py[cod]
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
