@@ -19,3 +19,6 @@ media/
 *.log
 *.out
 *.toc
+
+# Loose working note (never commit)
+notes/DRAFTING-PROTOCOL-2.0.md
