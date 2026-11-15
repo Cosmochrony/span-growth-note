@@ -63,7 +63,8 @@
 \begin{abstract}
 The spectral admissibility programme measures a projective block capacity $\sigma_c(n)$ along the
 breadth-first cascade of the Heisenberg Cayley graph and converts capacity exponents into growth exponents
-through the relation $\beta = 1/(\delta + \tfrac{1}{2})$, derived on Ramanujan--LPS relaxation graphs.
+through the relation $\beta = 1/(\delta + \tfrac{1}{2})$, derived on Ramanujan--LPS relaxation graphs under an
+unestablished square-root growth hypothesis.
 This note establishes the span-growth law the Heisenberg substrate itself imposes, states its rigorous
 status, and proves that the expander-derived conversion law does not transfer to the substrate on which the
 capacities are measured.
@@ -125,8 +126,10 @@ the structural relation
   \beta \;=\; \frac{1}{\delta + \tfrac{1}{2}},
 \end{equation}
 derived in O6~\cite{Beau2026a10} --- there in the form $\beta = 1/(\alpha + \tfrac{1}{2})$ with $\alpha$ the
-redundancy exponent in the valence, $R \sim p^{-\alpha}$ --- from a growth inequality on Ramanujan--LPS
-relaxation graphs~\cite{LPS88} established in O4~\cite{Beau2026a8}, recast in capacity language in
+redundancy exponent in the valence, $R \sim p^{-\alpha}$ --- from a square-root growth inequality on
+Ramanujan--LPS relaxation graphs~\cite{LPS88} that O6 states as an unestablished hypothesis, called~(G)
+there (O4~\cite{Beau2026a8} shows that the bounded-flux argument advanced for it does not hold, without
+showing it false), recast in capacity language in
 O7~\cite{Beau2026a11}, and applied at the fibre level, in the $\delta$-form above, to the measured
 pair-capacity exponent $\delta_{\mathrm{pair}}$ of the Heisenberg cascade in
 O16--O24~\cite{Beau2026a20,Beau2026a25,Beau2026a26,Beau2026a27,Beau2026a28}.
@@ -273,7 +276,7 @@ Three native facts frame everything that follows.
 
 \begin{remark}[The only growing valence]
   \label{rem:valence}
-  On the LPS side the dynamical variable of the growth equation is the graph valence
+  On the LPS side the dynamical variable of the hypothesised growth equation is the graph valence
   $p(n)$~\cite{Beau2026a8,Beau2026a10}.
   A Heisenberg Cayley graph has constant degree, so the degree cannot play this role; the cumulative span
   $r(n)$ is the only corpus-native growing candidate, and the notation $p(n) := r(n)$ is used below when the
@@ -458,7 +461,8 @@ Proposition~\ref{prop:window}, the second needs no hypothesis at all.
 \label{sec:coupling}
 
 The increment identity of Lemma~\ref{lem:identity} is the native form of the multiplicative redundancy
-insertion of the LPS growth equation~\cite{Beau2026a10}: the novelty fraction multiplies the frontier,
+insertion into the LPS growth hypothesis~(G) of O6~\cite{Beau2026a10}: the novelty fraction multiplies the
+frontier,
 exactly and by definition.
 What changes across substrates is what the frontier is a power \emph{of}.
 
@@ -529,14 +533,17 @@ The next corollary closes the remaining route: no constant can restore the squar
 
 \begin{remark}[Why the LPS law does not transpose]
   \label{rem:lps}
-  In the LPS derivation~\cite{Beau2026a8,Beau2026a10} the frontier factor $\sqrt{p}$ carries the expander
-  isoperimetry of a graph whose valence grows along the cascade, and the additive $\tfrac{1}{2}$
-  in~\eqref{eq:lps-law} is precisely the $p$-exponent of that frontier.
+  In the LPS derivation~\cite{Beau2026a10}, which is conditional on hypothesis~(G), the frontier factor
+  $\sqrt{p}$ is meant to carry the expander isoperimetry of a graph whose valence grows along the cascade,
+  and the additive $\tfrac{1}{2}$ in~\eqref{eq:lps-law} is precisely the $p$-exponent of that frontier.
+  That factor is hypothesised, not derived: O4~\cite{Beau2026a8} shows that the front-size argument
+  advanced for it does not hold.
   On a polynomial-growth substrate the frontier is the exogenous sphere $|S_n| \sim \kappa n^{D-1}$,
   independent of the achieved span, and carries $p$-exponent zero; Corollary~\ref{cor:t3} shows that no
   uniform constant can restore the square-root form once $D > 2$.
   The Heisenberg capacity-to-growth map is therefore~\eqref{eq:heis-law} on the growth branch, not
-  \eqref{eq:lps-law}; neither law implies the other, and each is correct in its own geometric regime.
+  \eqref{eq:lps-law}; neither law implies the other, and each belongs to its own geometric regime, the LPS
+  law conditionally on~(G).
   Restoring~\eqref{eq:lps-law} for Heisenberg-measured exponents requires a two-substrate construction ---
   LPS dynamics fed by Heisenberg-measured redundancy --- whose identification step is external to both
   substrates and is not supplied here.
@@ -544,8 +551,8 @@ The next corollary closes the remaining route: no constant can restore the squar
 
 \begin{remark}[No native carrier for the bounded-flux constant]
   \label{rem:bi}
-  In the LPS derivation the bounded-flux constant $\cBI$ shapes the growth equation through a feedback
-  loop: the flux bound limits exploration, exploration grows the valence, and the valence sets the frontier
+  In the LPS model, under hypothesis~(G), the bounded-flux constant $\cBI$ would shape the growth equation
+  through a feedback loop: the flux bound limits exploration, exploration grows the valence, and the valence sets the frontier
   through which the flux acts~\cite{Beau2026a8}.
   On a fixed Cayley graph the explored volume is autonomous: $|B_n|$ and $|S_n|$ are properties of the
   graph, independent of $\sigma_c$ and of any dynamical bound, and the increment identity contains no
