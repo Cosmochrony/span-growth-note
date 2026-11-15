@@ -55,7 +55,7 @@
   \large for the Expander-Derived Cascade-Exponent Law}
 \author{J\'er\^ome Beau\\
   \small Independent Researcher, France; jerome.beau@cosmochrony.org}
-\date{2026}
+\date{2026\\[2pt]\small Version 2.2}
 
 \begin{document}
 \maketitle
@@ -63,8 +63,8 @@
 \begin{abstract}
 The spectral admissibility programme measures a projective block capacity $\sigma_c(n)$ along the
 breadth-first cascade of the Heisenberg Cayley graph and converts capacity exponents into growth exponents
-through the relation $\beta = 1/(\delta + \tfrac{1}{2})$, derived on Ramanujan--LPS relaxation graphs under an
-unestablished square-root growth hypothesis.
+through the relation $\beta = 1/(\delta + \tfrac{1}{2})$, of which O6 derives on Ramanujan--LPS graphs only the
+upper bound, under unestablished growth hypotheses.
 This note establishes the span-growth law the Heisenberg substrate itself imposes, states its rigorous
 status, and proves that the expander-derived conversion law does not transfer to the substrate on which the
 capacities are measured.
@@ -91,9 +91,6 @@ and never inside a reciprocal; and fitting against the shifted logarithm $\log(n
 by a computable $8$--$13\%$ on the production windows.
 Window-effective exponents make contact near $q = 211$ and separate strictly for $q \ge 307$; the contact
 is transitional in the accessible data and the asymptotic value of $\dc$ remains open.
-The polynomial span exponent is distinct from the exponential per-shell rate $\bstar$ of the
-projected-Yukawa mass factorisation.
-
 \medskip
 \noindent\textbf{Interpretive status.}
 The classification and the no-go are proved under explicit, separately stated hypotheses; the numerical
@@ -125,18 +122,20 @@ the structural relation
   \label{eq:lps-law}
   \beta \;=\; \frac{1}{\delta + \tfrac{1}{2}},
 \end{equation}
-derived in O6~\cite{Beau2026a10} --- there in the form $\beta = 1/(\alpha + \tfrac{1}{2})$ with $\alpha$ the
-redundancy exponent in the valence, $R \sim p^{-\alpha}$ --- from a square-root growth inequality on
-Ramanujan--LPS relaxation graphs~\cite{LPS88} that O6 states as an unestablished hypothesis, called~(G)
-there (O4~\cite{Beau2026a8} shows that the bounded-flux argument advanced for it does not hold, without
-showing it false), recast in capacity language in
+of which O6~\cite{Beau2026a10} derives only the upper bound $\beta \le 1/(\alpha + \tfrac{1}{2})$, with
+$\alpha$ the redundancy exponent in the valence, $R \sim p^{-\alpha}$, and no equality: O6 obtains it from an
+effective growth inequality on Ramanujan--LPS relaxation graphs~\cite{LPS88}, called~(G$_R$) there, which
+inserts the redundancy into a square-root growth hypothesis~(G) and does not follow from it; both are
+unestablished (O4~\cite{Beau2026a8} shows that the bounded-flux argument advanced for~(G) does not hold,
+without showing it false).
+The relation was recast in capacity language in
 O7~\cite{Beau2026a11}, and applied at the fibre level, in the $\delta$-form above, to the measured
 pair-capacity exponent $\delta_{\mathrm{pair}}$ of the Heisenberg cascade in
 O16--O24~\cite{Beau2026a20,Beau2026a25,Beau2026a26,Beau2026a27,Beau2026a28}.
 The capacity measurements themselves~\cite{Beau2026a16,Beau2026a29} are performed on the Cayley graphs of
 $\Heisq$, whose breadth-first (BFS) geometry is polynomial --- homogeneous dimension
 $\Dhom = 4$~\cite{Bass1972,Guivarch1973} --- and therefore very different from the expander geometry on which
-relation~\eqref{eq:lps-law} was derived, conditionally on~(G).
+O6 derives the corresponding upper bound, conditionally on~(G$_R$).
 
 This note asks the substrate's own question: \emph{what growth law does the Heisenberg cascade itself
 impose}, using only objects native to a single Heisenberg BFS, with no LPS import?
@@ -197,7 +196,8 @@ The note does not modify any capacity measurement, does not touch the shell-alig
 O22~\cite{Beau2026a26}, the conditional adjoint-dimension theorem of O23~\cite{Beau2026a27}
 (the threshold itself is a supplied selection rule there), or the verticality result of
 O24~\cite{Beau2026a28}, and makes no statement about the numerical value of any asymptotic exponent.
-It establishes in which geometric regime the conversion law~\eqref{eq:lps-law} can be derived, and what
+It establishes in which geometric regime the conversion law~\eqref{eq:lps-law} has a growth carrier (on the
+LPS side only as an upper bound), and what
 replaces it on the substrate where the capacities are actually measured.
 The no-go statements are scoped to the native realisations the corpus defines: they exclude neither a
 future, differently constructed native valence nor a future construction of a pair-level growth process,
@@ -461,8 +461,8 @@ Proposition~\ref{prop:window}, the second needs no hypothesis at all.
 \label{sec:coupling}
 
 The increment identity of Lemma~\ref{lem:identity} is the native form of the multiplicative redundancy
-insertion into the LPS growth hypothesis~(G) of O6~\cite{Beau2026a10}: the novelty fraction multiplies the
-frontier,
+insertion that defines the effective LPS growth hypothesis~(G$_R$) of O6~\cite{Beau2026a10}: the novelty
+fraction multiplies the frontier,
 exactly and by definition.
 What changes across substrates is what the frontier is a power \emph{of}.
 
@@ -533,7 +533,7 @@ The next corollary closes the remaining route: no constant can restore the squar
 
 \begin{remark}[Why the LPS law does not transpose]
   \label{rem:lps}
-  In the LPS derivation~\cite{Beau2026a10}, which is conditional on hypothesis~(G), the frontier factor
+  In the LPS derivation~\cite{Beau2026a10}, which is conditional on hypothesis~(G$_R$), the frontier factor
   $\sqrt{p}$ is meant to carry the expander isoperimetry of a graph whose valence grows along the cascade,
   and the additive $\tfrac{1}{2}$ in~\eqref{eq:lps-law} is precisely the $p$-exponent of that frontier.
   That factor is hypothesised, not derived: O4~\cite{Beau2026a8} shows that the front-size argument
@@ -543,7 +543,7 @@ The next corollary closes the remaining route: no constant can restore the squar
   uniform constant can restore the square-root form once $D > 2$.
   The Heisenberg capacity-to-growth map is therefore~\eqref{eq:heis-law} on the growth branch, not
   \eqref{eq:lps-law}; neither law implies the other, and each belongs to its own geometric regime, the LPS
-  law conditionally on~(G).
+  relation only as the upper bound $\beta \le 1/(\delta + \tfrac12)$ under~(G$_R$).
   Restoring~\eqref{eq:lps-law} for Heisenberg-measured exponents requires a two-substrate construction ---
   LPS dynamics fed by Heisenberg-measured redundancy --- whose identification step is external to both
   substrates and is not supplied here.
@@ -592,7 +592,8 @@ Neither survives on the native side, in the following corpus-scoped sense.
 
 \begin{proposition}[Exponent coordinates]
   \label{prop:coordinates}
-  In the conversion law $\beta = 1/(\alpha + \tfrac12)$ of O6~\cite{Beau2026a10}, $\alpha$ is defined
+  In the conversion law $\beta = 1/(\alpha + \tfrac12)$, of which O6~\cite{Beau2026a10} proves only the
+  upper bound, $\alpha$ is defined
   against the valence: $R \sim p^{-\alpha}$.
   A capacity exponent $\delta$ is measured against the shell index: $\sigma \sim n^{-\delta}$, in the
   window sense of Proposition~\ref{prop:window}.
@@ -606,7 +607,8 @@ Neither survives on the native side, in the following corpus-scoped sense.
 
 \begin{remark}[The separation-of-variables algebra is coordinate-honest]
   \label{rem:selfconsistency}
-  The general form behind~\eqref{eq:lps-law} is $\beta = 1/(\alpha + 1 - \theta_p)$, where $\theta_p$ is
+  For an exact growth equation, the general form behind~\eqref{eq:lps-law} is $\beta = 1/(\alpha + 1 - \theta_p)$
+  (for a growth inequality such as~(G$_R$) it is only an upper bound), where $\theta_p$ is
   the frontier exponent measured against the growing variable $p$ itself.
   With the native window inputs on the growth branch --- $p = r \sim n^{D-\dc}$, redundancy exponent
   $\alpha_R = \dc/(D-\dc)$, frontier-versus-span exponent $\theta_p = (D-1)/(D-\dc)$ --- it returns
