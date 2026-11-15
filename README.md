@@ -25,7 +25,8 @@ measured rank only through an exact finite-window formulation with two-sided bou
 ($a_\pm$, $\kappa_\pm$ sandwiching $r(n) - r(m)$ by $\sum k^{D-1-\delta_c}$).
 Every numerical exponent statement is window-scoped, and no joint large-$q$ limit is claimed.
 
-The expander-derived conversion law $\beta = 1/(\delta + \tfrac{1}{2})$ does not transfer to the substrate on
+The expander-side conversion law $\beta = 1/(\delta + \tfrac{1}{2})$, of which O6 derives only the upper
+bound, does not transfer to the substrate on
 which the capacities are measured.
 The no-go has three independent legs, each scoped to the constructions the corpus defines:
 
