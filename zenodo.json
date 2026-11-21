@@ -4,5 +4,6 @@
   "publication_type": "workingpaper",
   "main_tex": "tex/SpanGrowthNote.tex",
   "zenodo_id": 21480521,
-  "doi": "10.5281/zenodo.21480521"
+  "doi": "10.5281/zenodo.21480521",
+  "notes": "Version 2.2.1. O22 is cited for its projection-locking theorem on the Born-Infeld saturation depth, not for a shell-alignment theorem: O22 1.19 withdraws the corollary identifying that depth with the O21 rank. No result of the note is changed."
 }
