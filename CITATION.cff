@@ -7,7 +7,7 @@ authors:
     given-names: "Jérôme"
 repository-code: "https://github.com/Cosmochrony/span-growth-note"
 url: "https://cosmochrony.org/science/spectral/program/span-growth/"
-version: "2.2.1"
+version: "2.3"
 doi: "10.5281/zenodo.21480521"
 license: "CC-BY-4.0"
 preferred-citation:

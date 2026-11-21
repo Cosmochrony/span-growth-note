@@ -1,7 +1,7 @@
 # Native Span Growth from Capacity Decay and the Failure of the Heisenberg Capacity-to-Rate Transfer
 
-**A Three-Branch Classification with Its Rigorous Status, and the Substrate No-Go for the Expander-Derived
-Cascade-Exponent Law**
+**A Three-Branch Classification with Its Rigorous Status, and the Substrate No-Go for the Expander-Side
+Cascade-Exponent Bound**
 
 Cosmochrony working paper (spectral admissibility sub-programme).
 Cite via the Zenodo concept DOI: [10.5281/zenodo.21480521](https://doi.org/10.5281/zenodo.21480521).
